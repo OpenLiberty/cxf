@@ -21,16 +21,11 @@ package org.apache.cxf.ws.security.wss4j;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.logging.Logger;
 
-import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.ws.policy.AssertionInfo;
 import org.apache.cxf.ws.policy.AssertionInfoMap;
 import org.apache.cxf.ws.security.policy.PolicyUtils;
-import org.apache.cxf.ws.security.policy.custom.DefaultAlgorithmSuiteLoader;
 import org.apache.wss4j.common.WSS4JConstants;
 import org.apache.wss4j.common.crypto.AlgorithmSuite;
 import org.apache.wss4j.common.ext.WSSecurityException;
@@ -47,19 +42,6 @@ import org.apache.wss4j.policy.model.SupportingTokens;
  * to enforce what algorithms are allowed in a request.
  */
 public final class AlgorithmSuiteTranslater {
-    private static final Logger LOG = LogUtils.getLogger(AlgorithmSuiteTranslater.class); // Liberty Change
-
-    // Liberty Change Start: Backport 4.x
-    private final Map<String, Object> customAlgSuiteProperties;
-
-    public AlgorithmSuiteTranslater() {
-        this.customAlgSuiteProperties = Collections.emptyMap();
-    }
-
-    public AlgorithmSuiteTranslater(Map<String, Object> customAlgorithmSuiteProperties) {
-        this.customAlgSuiteProperties = customAlgorithmSuiteProperties;
-    }
-    // Liberty Change End
 
     public void translateAlgorithmSuites(AssertionInfoMap aim, RequestData data) throws WSSecurityException {
         if (aim == null) {
@@ -111,45 +93,41 @@ public final class AlgorithmSuiteTranslater {
             if (algorithmSuite == null) {
                 algorithmSuite = new AlgorithmSuite();
             }
-    		// Liberty Change Start: Backport 4.x
-            AlgorithmSuiteType customAlgSuite =
-                    DefaultAlgorithmSuiteLoader.customize(cxfAlgorithmSuite.getAlgorithmSuiteType(),
-                            customAlgSuiteProperties);
 
-            if (customAlgSuite != null) {
+            AlgorithmSuiteType algorithmSuiteType = cxfAlgorithmSuite.getAlgorithmSuiteType();
+            if (algorithmSuiteType != null) {
             // Set asymmetric key lengths
                 if (algorithmSuite.getMaximumAsymmetricKeyLength()
-                    < customAlgSuite.getMaximumAsymmetricKeyLength()) {
+                    < algorithmSuiteType.getMaximumAsymmetricKeyLength()) {
                     algorithmSuite.setMaximumAsymmetricKeyLength(
-                        customAlgSuite.getMaximumAsymmetricKeyLength());
+                        algorithmSuiteType.getMaximumAsymmetricKeyLength());
                 }
                 if (algorithmSuite.getMinimumAsymmetricKeyLength()
-                    > customAlgSuite.getMinimumAsymmetricKeyLength()) {
+                    > algorithmSuiteType.getMinimumAsymmetricKeyLength()) {
                     algorithmSuite.setMinimumAsymmetricKeyLength(
-                        customAlgSuite.getMinimumAsymmetricKeyLength());
+                        algorithmSuiteType.getMinimumAsymmetricKeyLength());
                 }
 
                 // Set symmetric key lengths
                 if (algorithmSuite.getMaximumSymmetricKeyLength()
-                    < customAlgSuite.getMaximumSymmetricKeyLength()) {
+                    < algorithmSuiteType.getMaximumSymmetricKeyLength()) {
                     algorithmSuite.setMaximumSymmetricKeyLength(
-                        customAlgSuite.getMaximumSymmetricKeyLength());
+                        algorithmSuiteType.getMaximumSymmetricKeyLength());
                 }
                 if (algorithmSuite.getMinimumSymmetricKeyLength()
-                    > customAlgSuite.getMinimumSymmetricKeyLength()) {
+                    > algorithmSuiteType.getMinimumSymmetricKeyLength()) {
                     algorithmSuite.setMinimumSymmetricKeyLength(
-                        customAlgSuite.getMinimumSymmetricKeyLength());
+                        algorithmSuiteType.getMinimumSymmetricKeyLength());
                 }
 
-                algorithmSuite.addEncryptionMethod(customAlgSuite.getEncryption());
-                algorithmSuite.addKeyWrapAlgorithm(customAlgSuite.getSymmetricKeyWrap());
-                algorithmSuite.addKeyWrapAlgorithm(customAlgSuite.getAsymmetricKeyWrap());
-                algorithmSuite.addDigestAlgorithm(customAlgSuite.getDigest());
-
-                algorithmSuite.addSignatureMethod(customAlgSuite.getAsymmetricSignature());
-                algorithmSuite.addSignatureMethod(customAlgSuite.getSymmetricSignature());
+                algorithmSuite.addEncryptionMethod(algorithmSuiteType.getEncryption());
+                algorithmSuite.addKeyWrapAlgorithm(algorithmSuiteType.getSymmetricKeyWrap());
+                algorithmSuite.addKeyWrapAlgorithm(algorithmSuiteType.getAsymmetricKeyWrap());
+                algorithmSuite.addDigestAlgorithm(algorithmSuiteType.getDigest());
             }
 
+            algorithmSuite.addSignatureMethod(algorithmSuiteType.getAsymmetricSignature());
+            algorithmSuite.addSignatureMethod(algorithmSuiteType.getSymmetricSignature());
             algorithmSuite.addC14nAlgorithm(cxfAlgorithmSuite.getC14n().getValue());
 
             algorithmSuite.addTransformAlgorithm(cxfAlgorithmSuite.getC14n().getValue());
@@ -161,10 +139,8 @@ public final class AlgorithmSuiteTranslater {
 
             algorithmSuite.addDerivedKeyAlgorithm(SPConstants.P_SHA1);
             algorithmSuite.addDerivedKeyAlgorithm(SPConstants.P_SHA1_L128);
-            algorithmSuite.addDerivedKeyAlgorithm("http://www.w3.org/2021/04/xmldsig-more#hkdf");
-            algorithmSuite.addKeyAgreementMethodAlgorithm(SPConstants.KA_ECDH_ES);
         }
-    	// Liberty Change End
+
         return algorithmSuite;
     }
 
@@ -211,4 +187,5 @@ public final class AlgorithmSuiteTranslater {
         }
         return algorithmSuites;
     }
+
 }

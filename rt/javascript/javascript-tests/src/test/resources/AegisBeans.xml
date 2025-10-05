@@ -29,7 +29,7 @@
             <bean class="org.apache.cxf.aegis.databinding.AegisDatabinding">
                 <property name="overrideTypes">
                     <list>
-                        <value>io.openliberty.org.apache.cxf.javascript.fortest.aegis.Mammal</value>
+                        <value>org.apache.cxf.javascript.fortest.aegis.Mammal</value>
                     </list>
                 </property>
             </bean>

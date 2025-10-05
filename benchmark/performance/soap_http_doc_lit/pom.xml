@@ -19,7 +19,7 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.openliberty.org.apache.cxf.benchmark</groupId>
+    <groupId>org.apache.cxf.benchmark</groupId>
     <artifactId>cxf-benchmark-soapdoclit</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -31,32 +31,32 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.benchmark</groupId>
+            <groupId>org.apache.cxf.benchmark</groupId>
             <artifactId>cxf-benchmark-base</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${cxf.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>${cxf.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>${cxf.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-policy</artifactId>
             <version>${cxf.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-security</artifactId>
             <version>${cxf.version}</version>
         </dependency>
@@ -70,7 +70,7 @@
         <defaultGoal>install</defaultGoal>
         <plugins>
             <plugin>
-                <groupId>io.openliberty.org.apache.cxf</groupId>
+                <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>${cxf.version}</version>
                 <executions>
@@ -106,7 +106,7 @@
             <id>server</id>
             <dependencies>
                 <dependency>
-                    <groupId>io.openliberty.org.apache.cxf</groupId>
+                    <groupId>org.apache.cxf</groupId>
                     <artifactId>cxf-rt-transports-http-jetty</artifactId>
                     <version>${cxf.version}</version>
                 </dependency>
@@ -130,7 +130,7 @@
                                 </goals>
                                 <configuration>
                                     <classpathScope>test</classpathScope>
-                                    <mainClass>io.openliberty.org.apache.cxf.performance.complex_type.server.Server</mainClass>
+                                    <mainClass>org.apache.cxf.performance.complex_type.server.Server</mainClass>
                                     <arguments>
                                         <argument>-host</argument>
                                         <argument>${host}</argument>
@@ -171,7 +171,7 @@
                                 </goals>
                                 <configuration>
                                     <classpathScope>test</classpathScope>
-                                    <mainClass>io.openliberty.org.apache.cxf.performance.complex_type.client.Client</mainClass>
+                                    <mainClass>org.apache.cxf.performance.complex_type.client.Client</mainClass>
                                     <arguments>
                                         <argument>-WSDL</argument>
                                         <argument>${protocol}://${host}:8080/cxf-benchmark-soapdoclit/services/SoapHttpDocLitPort?wsdl</argument>
@@ -197,7 +197,7 @@
             <id>clientserver</id>
             <dependencies>
                 <dependency>
-                    <groupId>io.openliberty.org.apache.cxf</groupId>
+                    <groupId>org.apache.cxf</groupId>
                     <artifactId>cxf-rt-transports-http-jetty</artifactId>
                     <version>${cxf.version}</version>
                 </dependency>
@@ -226,7 +226,7 @@
                                 </goals>
                                 <configuration>
                                     <classpathScope>test</classpathScope>
-                                    <mainClass>io.openliberty.org.apache.cxf.performance.complex_type.client.Client</mainClass>
+                                    <mainClass>org.apache.cxf.performance.complex_type.client.Client</mainClass>
                                     <arguments>
                                         <argument>-WSDL</argument>
                                         <argument>${protocol}://${host}:8080/cxf-benchmark-soapdoclit/services/SoapHttpDocLitPort?wsdl</argument>

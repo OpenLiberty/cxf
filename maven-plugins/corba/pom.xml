@@ -25,12 +25,12 @@
     <description>Apache CXF CORBA Tools Maven2 Plugins</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-maven-plugins</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
     </parent>
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.plugin.corbatools</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.plugin.corbatools</cxf.module.name>
     </properties>
     <dependencies>
         <dependency>
@@ -67,7 +67,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-tools-corba</artifactId>
             <version>${project.version}</version>
         </dependency>

@@ -23,9 +23,9 @@
     <name>JAX-RS OpenAPI v3.0 Microprofile Implementation and Spring Demo</name>
     <description>JAX-RS OpenAPI v3.0 Microprofile Implementation and Spring Demo</description>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
+        <groupId>org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../..</relativePath>
     </parent>
 
@@ -61,20 +61,20 @@
     
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
         </dependency>
         <!-- This dependency is needed if you're using the Jetty container -->
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http-jetty</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-service-description-microprofile-openapi</artifactId>
         </dependency>
         <dependency>

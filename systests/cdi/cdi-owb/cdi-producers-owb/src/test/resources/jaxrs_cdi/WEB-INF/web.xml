@@ -8,7 +8,7 @@
 	<servlet>
 		<servlet-name>CXFServlet</servlet-name>
 		<display-name>CXF Servlet</display-name>
-		<servlet-class>io.openliberty.org.apache.cxf.cdi.CXFCdiServlet</servlet-class>    
+		<servlet-class>org.apache.cxf.cdi.CXFCdiServlet</servlet-class>    
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 

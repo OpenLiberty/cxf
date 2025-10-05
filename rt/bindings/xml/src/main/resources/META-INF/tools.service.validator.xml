@@ -19,5 +19,5 @@
 -->
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-    <entry key="XMLFormatValidator">io.openliberty.org.apache.cxf.binding.xml.XMLFormatValidator</entry>
+    <entry key="XMLFormatValidator">org.apache.cxf.binding.xml.XMLFormatValidator</entry>
 </properties>

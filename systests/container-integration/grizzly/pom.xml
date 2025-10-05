@@ -20,9 +20,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf.systests</groupId>
+        <groupId>org.apache.cxf.systests</groupId>
         <artifactId>cxf-systests-container-integration</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>cxf-systests-ci-grizzly</artifactId>
@@ -30,24 +30,24 @@
     <description>Apache CXF Container Integration Test Grizzly</description>
     
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.systests.ci.grizzly</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.systests.ci.grizzly</cxf.module.name>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-testutils</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>

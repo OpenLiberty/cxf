@@ -3,7 +3,7 @@
     <jws:handler-chain>
         <jws:handler>
             <jws:handler-name>EventingSoapHandler</jws:handler-name>
-            <jws:handler-class>io.openliberty.org.apache.cxf.ws.eventing.shared.handlers.SubscriptionReferenceParsingHandler</jws:handler-class>
+            <jws:handler-class>org.apache.cxf.ws.eventing.shared.handlers.SubscriptionReferenceParsingHandler</jws:handler-class>
         </jws:handler>
     </jws:handler-chain>
 </jws:handler-chains>

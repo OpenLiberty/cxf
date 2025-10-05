@@ -19,18 +19,18 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+    <groupId>org.apache.cxf.services.xkms</groupId>
     <artifactId>cxf-services-xkms-itests</artifactId>
     <name>Apache CXF XKMS Integration Tests</name>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.xkms.itests</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.xkms.itests</cxf.module.name>
     </properties>
     <dependencies>
         <dependency>
@@ -38,19 +38,19 @@
             <artifactId>org.osgi.core</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+            <groupId>org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-common</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+            <groupId>org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-x509-handlers</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+            <groupId>org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-service</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+            <groupId>org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-features</artifactId>
             <version>${project.version}</version>
             <type>xml</type>
@@ -72,7 +72,7 @@
 
         <!-- to force the karaf cxf feature to be available before testing -->
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.karaf</groupId>
+            <groupId>org.apache.cxf.karaf</groupId>
             <artifactId>apache-cxf</artifactId>
             <version>${project.version}</version>
             <type>xml</type>
@@ -85,7 +85,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.karaf</groupId>
+            <groupId>org.apache.cxf.karaf</groupId>
             <artifactId>cxf-karaf-commands</artifactId>
             <scope>test</scope>
         </dependency>
@@ -149,7 +149,7 @@
             <artifactId>slf4j-jdk14</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-testutils</artifactId>
             <scope>test</scope>
         </dependency>

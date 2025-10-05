@@ -25,7 +25,7 @@
     </context-param>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>io.openliberty.org.apache.cxf.systest.servlet.SpringServletContextTest$AppConfig</param-value>
+        <param-value>org.apache.cxf.systest.servlet.SpringServletContextTest$AppConfig</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -33,7 +33,7 @@
     <servlet>
         <servlet-name>CXFServlet</servlet-name>
         <display-name>CXF Servlet</display-name>
-        <servlet-class>io.openliberty.org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>

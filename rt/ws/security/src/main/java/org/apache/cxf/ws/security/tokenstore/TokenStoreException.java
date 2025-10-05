@@ -19,7 +19,6 @@
 
 package org.apache.cxf.ws.security.tokenstore;
 
-// Liberty Change
 public class TokenStoreException extends Exception {
 
     public TokenStoreException(Throwable cause) {

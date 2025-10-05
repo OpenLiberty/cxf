@@ -24,8 +24,13 @@ import org.apache.cxf.tools.wsdlto.WSDLToJavaContainer;
 import org.apache.cxf.tools.wsdlto.core.DataBindingProfile;
 import org.apache.cxf.tools.wsdlto.core.FrontEndProfile;
 import org.apache.cxf.tools.wsdlto.core.PluginLoader;
+import org.apache.cxf.tools.wsdlto.frontend.jaxws.JAXWSContainer;
+
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 
 public class ValidatorTest extends ProcessorTestBase {
@@ -40,7 +45,18 @@ public class ValidatorTest extends ProcessorTestBase {
 
     @Test
     public void testXMLFormat() throws Exception {
-        // Skip this test as the package structure has changed from org.apache.cxf to io.openliberty.org.apache.cxf
-        // The test would need to be updated to work with the new package structure
+        processor = new JAXWSContainer(null);
+        env.put(ToolConstants.CFG_WSDLURL, getLocation("/wsdl2java_wsdl/xml_format_root.wsdl"));
+        processor.setContext(env);
+
+        try {
+            processor.execute();
+            fail("xml_format_root.wsdl is not a valid wsdl, should throws exception here");
+        } catch (Exception e) {
+            String expected = "Binding(Greeter_XMLBinding):BindingOperation"
+                + "({http://apache.org/xml_http_bare}sayHi)-input: empty value of rootNode attribute, "
+                + "the value should be {http://apache.org/xml_http_bare}sayHi";
+            assertEquals(expected, e.getMessage().trim());
+        }
     }
 }

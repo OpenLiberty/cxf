@@ -19,9 +19,9 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>cxf-parent</artifactId>
@@ -34,7 +34,7 @@
         <cxf.surefire.fork.count>1</cxf.surefire.fork.count>
         <cxf.surefire.format>brief</cxf.surefire.format>
         <cxf.surefire.usefile>false</cxf.surefire.usefile>
-        <io.openliberty.org.apache.cxf.transport.websocket.atmosphere.disabled>false</io.openliberty.org.apache.cxf.transport.websocket.atmosphere.disabled>
+        <org.apache.cxf.transport.websocket.atmosphere.disabled>false</org.apache.cxf.transport.websocket.atmosphere.disabled>
         <cxf.surefire.parallel.mode />
         <cxf.surefire.fork.vmargs>-ea</cxf.surefire.fork.vmargs>
         <cxf.server.launcher.vmargs>-ea</cxf.server.launcher.vmargs>
@@ -184,8 +184,8 @@
         <cxf.netty.tcnative.version>2.0.69.Final</cxf.netty.tcnative.version>
         <cxf.olingo.version>2.0.12</cxf.olingo.version>
         <cxf.openjpa.version>3.2.2</cxf.openjpa.version>
-        <cxf.opensaml.osgi.version.range>[3.1,4.4)</cxf.opensaml.osgi.version.range>
-        <cxf.opensaml.osgi.version>4.2.3.1</cxf.opensaml.osgi.version>
+        <cxf.opensaml.osgi.version.range>[3.1,4)</cxf.opensaml.osgi.version.range>
+        <cxf.opensaml.osgi.version>3.4.6_3</cxf.opensaml.osgi.version>
         <cxf.opentelemetry.version>1.34.1</cxf.opentelemetry.version>
         <cxf.opentelemetry.semconv.version>1.29.0-alpha</cxf.opentelemetry.semconv.version>
         <cxf.opentracing.version>0.33.0</cxf.opentracing.version>
@@ -235,7 +235,7 @@
         <cxf.woodstox.core.version>6.4.0</cxf.woodstox.core.version>
         <cxf.woodstox.stax2-api.version>4.2.1</cxf.woodstox.stax2-api.version>
         <cxf.wsdl4j.version>1.6.3</cxf.wsdl4j.version>
-        <cxf.wss4j.version>2.4.4.1</cxf.wss4j.version>
+        <cxf.wss4j.version>2.4.3</cxf.wss4j.version>
         <cxf.xerces.version>2.12.2</cxf.xerces.version>
         <cxf.xmlschema.version>2.3.1</cxf.xmlschema.version>
         <cxf.xnio.version>3.8.16.Final</cxf.xnio.version>
@@ -278,7 +278,7 @@
         <cxf.wsdl4j.bundle.version>1.6.3_1</cxf.wsdl4j.bundle.version>
         <cxf.xerces.bundle.version>2.12.2_1</cxf.xerces.bundle.version>
         <cxf.xmlresolver.bundle.version>1.2_5</cxf.xmlresolver.bundle.version>
-        <cxf.xmlsec.bundle.version>2.3.6.1</cxf.xmlsec.bundle.version>
+        <cxf.xmlsec.bundle.version>2.3.4</cxf.xmlsec.bundle.version>
         <cxf.xpp3.bundle.version>1.1.4c_6</cxf.xpp3.bundle.version>
         <cxf.awaitility.version>4.3.0</cxf.awaitility.version>
     </properties>
@@ -497,7 +497,7 @@
                         <systemPropertyVariables>
                             <java.io.tmpdir>${basedir}/target</java.io.tmpdir>
                             <cxf.useRandomFirstPort>true</cxf.useRandomFirstPort>
-                            <io.openliberty.org.apache.cxf.JDKBugHacks.all>true</io.openliberty.org.apache.cxf.JDKBugHacks.all>
+                            <org.apache.cxf.JDKBugHacks.all>true</org.apache.cxf.JDKBugHacks.all>
                             <org.apache.ws.commons.schema.protectReadOnlyCollections>${cxf.protect-xmlschema-collections}</org.apache.ws.commons.schema.protectReadOnlyCollections>
                             <cxf.validateServiceSchemas>${cxf.validateServices}</cxf.validateServiceSchemas>
                             <java.awt.headless>${java.awt.headless}</java.awt.headless>
@@ -506,8 +506,8 @@
                             <derby.system.home>${basedir}/target/derby</derby.system.home>
                             <spring.validation.mode>${cxf.spring.validation.mode}</spring.validation.mode>
                             <server.launcher.vmargs>${cxf.server.launcher.vmargs}</server.launcher.vmargs>
-                            <io.openliberty.org.apache.cxf.transport.http.async.usePolicy>ASYNC_ONLY</io.openliberty.org.apache.cxf.transport.http.async.usePolicy>
-                            <io.openliberty.org.apache.cxf.transport.websocket.atmosphere.disabled>${io.openliberty.org.apache.cxf.transport.websocket.atmosphere.disabled}</io.openliberty.org.apache.cxf.transport.websocket.atmosphere.disabled>
+                            <org.apache.cxf.transport.http.async.usePolicy>ASYNC_ONLY</org.apache.cxf.transport.http.async.usePolicy>
+                            <org.apache.cxf.transport.websocket.atmosphere.disabled>${org.apache.cxf.transport.websocket.atmosphere.disabled}</org.apache.cxf.transport.websocket.atmosphere.disabled>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
@@ -698,7 +698,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>io.openliberty.org.apache.cxf</groupId>
+                <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-bom</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>
@@ -707,45 +707,46 @@
 
             <!-- cxf internal test modules -->
             <dependency>
-                <groupId>io.openliberty.org.apache.cxf</groupId>
+                <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-rt-javascript-tests</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.cxf</groupId>
+                <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-tools-wsdlto-test</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.cxf.osgi.itests</groupId>
-                <artifactId>io.openliberty.org.apache.cxf.osgi.itests</artifactId>
+                <groupId>org.apache.cxf.osgi.itests</groupId>
+                <artifactId>org.apache.cxf.osgi.itests</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.cxf.osgi.itests</groupId>
-                <artifactId>io.openliberty.org.apache.cxf.osgi.itests-felix</artifactId>
+                <groupId>org.apache.cxf.osgi.itests</groupId>
+                <artifactId>org.apache.cxf.osgi.itests-felix</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.cxf.services.sts.systests</groupId>
+                <groupId>org.apache.cxf.services.sts.systests</groupId>
                 <artifactId>cxf-services-sts-systests-advanced</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.cxf.services.sts.systests</groupId>
+                <groupId>org.apache.cxf.services.sts.systests</groupId>
                 <artifactId>cxf-services-sts-systests-itests</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.cxf.services.sts.systests</groupId>
+                <groupId>org.apache.cxf.services.sts.systests</groupId>
                 <artifactId>cxf-services-sts-systests-osgi</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+                <groupId>org.apache.cxf.services.xkms</groupId>
                 <artifactId>cxf-services-xkms-itests</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.cxf.xjc-utils</groupId>
                 <artifactId>cxf-xjc-runtime</artifactId>
@@ -2020,22 +2021,22 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.wss4j</groupId>
+                <groupId>org.apache.wss4j</groupId>
                 <artifactId>wss4j-ws-security-dom</artifactId>
                 <version>${cxf.wss4j.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.wss4j</groupId>
+                <groupId>org.apache.wss4j</groupId>
                 <artifactId>wss4j-policy</artifactId>
                 <version>${cxf.wss4j.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.wss4j</groupId>
+                <groupId>org.apache.wss4j</groupId>
                 <artifactId>wss4j-ws-security-stax</artifactId>
                 <version>${cxf.wss4j.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.openliberty.org.apache.wss4j</groupId>
+                <groupId>org.apache.wss4j</groupId>
                 <artifactId>wss4j-ws-security-policy-stax</artifactId>
                 <version>${cxf.wss4j.version}</version>
             </dependency>
@@ -2159,7 +2160,6 @@
                     </plugin>
                 </plugins>
             </build>
-            
         </profile>
         <profile>
             <id>set.eclipse.output</id>

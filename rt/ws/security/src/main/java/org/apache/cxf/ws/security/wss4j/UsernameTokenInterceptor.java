@@ -76,13 +76,9 @@ import org.apache.wss4j.policy.model.UsernameToken;
 import org.apache.xml.security.exceptions.Base64DecodingException;
 import org.apache.xml.security.utils.XMLUtils;
 
-
-import com.ibm.websphere.ras.annotation.Trivial; // Liberty Change
-
 /**
  *
  */
-@Trivial 
 public class UsernameTokenInterceptor extends AbstractTokenInterceptor {
 
     public UsernameTokenInterceptor() {

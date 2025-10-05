@@ -19,9 +19,9 @@
     -->
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf.karaf</groupId>
+        <groupId>org.apache.cxf.karaf</groupId>
         <artifactId>karaf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
     </parent>
     <artifactId>apache-cxf</artifactId>
     <packaging>pom</packaging>
@@ -58,52 +58,52 @@
         </dependency>
 
 		<dependency>
-	        <groupId>io.openliberty.org.apache.cxf.karaf</groupId>
+	        <groupId>org.apache.cxf.karaf</groupId>
 		    <artifactId>cxf-karaf-commands</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>io.openliberty.org.apache.cxf.services.wsn</groupId>
+		    <groupId>org.apache.cxf.services.wsn</groupId>
 		    <artifactId>cxf-services-wsn-osgi</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>io.openliberty.org.apache.cxf.services.sts</groupId>
+		    <groupId>org.apache.cxf.services.sts</groupId>
 		    <artifactId>cxf-services-sts-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>io.openliberty.org.apache.cxf.services.ws-discovery</groupId>
+		    <groupId>org.apache.cxf.services.ws-discovery</groupId>
 		    <artifactId>cxf-services-ws-discovery-service</artifactId>
 			<version>${project.version}</version>
 		</dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-addr</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-rm</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-policy</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-mex</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-security</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-servlet-compatible</artifactId>
             <version>${project.version}</version>
         </dependency>

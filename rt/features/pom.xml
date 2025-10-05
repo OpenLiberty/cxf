@@ -25,9 +25,9 @@
     <description>Apache CXF Features Runtime</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-rt</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
     </parent>
     <modules>
         <module>clustering</module>

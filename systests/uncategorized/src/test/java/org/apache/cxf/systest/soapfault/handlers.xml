@@ -22,7 +22,7 @@
     <handler-chain>
         <handler>
             <handler-name>ph1</handler-name>
-            <handler-class>io.openliberty.org.apache.cxf.systest.soapfault.LoggingHandler</handler-class>
+            <handler-class>org.apache.cxf.systest.soapfault.LoggingHandler</handler-class>
             <init-param>
                 <param-name>token</param-name>
                 <param-value>String</param-value>

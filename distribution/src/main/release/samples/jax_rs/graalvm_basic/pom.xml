@@ -23,9 +23,9 @@
     <name>JAX-RS Basic Demo</name>
     <description>JAX-RS Basic Demo</description>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
+        <groupId>org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../..</relativePath>
     </parent>
      <properties>
@@ -36,7 +36,7 @@
             <id>server</id>
             <dependencies>
                 <dependency>
-                    <groupId>io.openliberty.org.apache.cxf</groupId>
+                    <groupId>org.apache.cxf</groupId>
                     <artifactId>cxf-rt-transports-http-netty-server</artifactId>
                 </dependency>
             </dependencies>
@@ -90,11 +90,11 @@
             <id>client</id>
             <dependencies>
                 <dependency>
-                    <groupId>io.openliberty.org.apache.cxf</groupId>
+                    <groupId>org.apache.cxf</groupId>
                     <artifactId>cxf-rt-transports-http-netty-client</artifactId>
                 </dependency>
                 <dependency>
-                    <groupId>io.openliberty.org.apache.cxf</groupId>
+                    <groupId>org.apache.cxf</groupId>
                     <artifactId>cxf-rt-rs-client</artifactId>
                 </dependency>
             </dependencies>
@@ -147,11 +147,11 @@
     </profiles>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
         </dependency>
         <dependency>

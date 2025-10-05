@@ -19,7 +19,7 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.openliberty.org.apache.cxf.benchmark</groupId>
+    <groupId>org.apache.cxf.benchmark</groupId>
     <artifactId>cxf-benchmark-base</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -46,7 +46,7 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${cxf.version}</version>
         </dependency>

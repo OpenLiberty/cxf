@@ -25,20 +25,20 @@
     <description>Apache CXF JAX-RS Servlet Container Initializer</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.rs.sci</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.rs.sci</cxf.module.name>
         <cxf.osgi.import>
             javax.servlet*;version="${cxf.osgi.javax.servlet.version}",
         </cxf.osgi.import>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>${project.version}</version>
         </dependency>    

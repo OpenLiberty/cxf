@@ -23,7 +23,6 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
-import java.time.Instant;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -60,6 +59,7 @@ import org.apache.wss4j.dom.validate.Validator;
 import org.apache.xml.security.encryption.XMLCipher;
 import org.apache.xml.security.encryption.XMLEncryptionException;
 import org.apache.xml.security.utils.Constants;
+import org.joda.time.DateTime;
 import org.opensaml.saml.common.SAMLVersion;
 import org.opensaml.saml.security.impl.SAMLSignatureProfileValidator;
 import org.opensaml.security.credential.BasicCredential;
@@ -120,7 +120,7 @@ public class SAMLProtocolResponseValidator {
         }
 
         if (samlResponse.getIssueInstant() != null) {
-            Instant currentTime = Instant.now();
+            DateTime currentTime = new DateTime();
             currentTime = currentTime.plusSeconds(futureTTL);
             if (samlResponse.getIssueInstant().isAfter(currentTime)) {
                 LOG.warning("SAML Response IssueInstant not met");
@@ -185,7 +185,7 @@ public class SAMLProtocolResponseValidator {
         }
 
         if (samlResponse.getIssueInstant() != null) {
-            Instant currentTime = Instant.now();
+            DateTime currentTime = new DateTime();
             currentTime = currentTime.plusSeconds(futureTTL);
             if (samlResponse.getIssueInstant().isAfter(currentTime)) {
                 LOG.warning("SAML Response IssueInstant not met");
@@ -413,7 +413,9 @@ public class SAMLProtocolResponseValidator {
                 assertion.verifySignature(samlKeyInfo);
 
                 assertion.parseSubject(
-                    new WSSSAMLKeyInfoProcessor(requestData), requestData.getSigVerCrypto()
+                    new WSSSAMLKeyInfoProcessor(requestData),
+                    requestData.getSigVerCrypto(),
+                    requestData.getCallbackHandler()
                 );
             } catch (WSSecurityException e) {
                 LOG.log(Level.FINE, "Assertion failed signature validation", e);

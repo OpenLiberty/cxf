@@ -21,11 +21,8 @@ package org.apache.cxf.ws.security.wss4j;
 import java.security.Provider;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Map;
 import java.util.Set;
-import java.util.function.Function;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
@@ -46,7 +43,6 @@ import org.apache.cxf.phase.PhaseInterceptor;
 import org.apache.cxf.ws.policy.AssertionInfoMap;
 import org.apache.cxf.ws.security.SecurityConstants;
 import org.apache.cxf.ws.security.policy.PolicyUtils;
-import org.apache.cxf.ws.security.policy.custom.DefaultAlgorithmSuiteLoader;
 import org.apache.cxf.ws.security.tokenstore.TokenStoreException;
 import org.apache.cxf.ws.security.wss4j.policyhandlers.AsymmetricBindingHandler;
 import org.apache.cxf.ws.security.wss4j.policyhandlers.SymmetricBindingHandler;
@@ -55,7 +51,6 @@ import org.apache.neethi.Policy;
 import org.apache.wss4j.common.ConfigurationConstants;
 import org.apache.wss4j.common.crypto.ThreadLocalSecurityProvider;
 import org.apache.wss4j.common.ext.WSSecurityException;
-import org.apache.wss4j.common.WSS4JConstants;
 import org.apache.wss4j.dom.engine.WSSConfig;
 import org.apache.wss4j.dom.message.WSSecHeader;
 import org.apache.wss4j.policy.model.AbstractBinding;
@@ -167,23 +162,8 @@ public class PolicyBasedWSS4JOutInterceptor extends AbstractPhaseInterceptor<Soa
                 }
                 translateProperties(message);
 
-               // Liberty Change Start: Backport 4.x
-                if (binding.getAlgorithmSuite() != null) {
-                    //filter custom alg suite properties:
-                	// TO-DO: Remove lamda operator
-                    Map<String, Object> customAlgSuiteParameters = message.getContextualPropertyKeys()
-                            .stream()
-                            .filter(k -> k.startsWith(SecurityConstants.CUSTOM_ALG_SUITE_PREFIX))
-                            .collect(Collectors.toMap(Function.identity(), k -> message.getContextualProperty(k)));
-
-                    DefaultAlgorithmSuiteLoader.customize(binding.getAlgorithmSuite().getAlgorithmSuiteType(),
-                            customAlgSuiteParameters);
-                    // Liberty Change End
-                }
-                
                 String asymSignatureAlgorithm =
                     (String)message.getContextualProperty(SecurityConstants.ASYMMETRIC_SIGNATURE_ALGORITHM);
-                
                 if (asymSignatureAlgorithm != null && binding.getAlgorithmSuite() != null) {
                     binding.getAlgorithmSuite().getAlgorithmSuiteType().setAsymmetricSignature(asymSignatureAlgorithm);
                 }
@@ -193,8 +173,8 @@ public class PolicyBasedWSS4JOutInterceptor extends AbstractPhaseInterceptor<Soa
                 if (symSignatureAlgorithm != null && binding.getAlgorithmSuite() != null) {
                     binding.getAlgorithmSuite().getAlgorithmSuiteType().setSymmetricSignature(symSignatureAlgorithm);
                 }
-	
-				try {
+
+                try {
                     if (binding instanceof TransportBinding) {
                         new TransportBindingHandler(config, (TransportBinding)binding, saaj,
                                                     secHeader, aim, message).handleBinding();

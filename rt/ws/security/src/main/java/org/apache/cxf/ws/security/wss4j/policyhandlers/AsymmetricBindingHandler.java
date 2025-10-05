@@ -87,10 +87,6 @@ import org.opensaml.saml.common.SAMLVersion;
 /**
  *
  */
-// Liberty Change; This class has no Liberty specific changes other than the Sensitive annotation 
-// It is required as an overlay because of Liberty specific changes to MessageImpl.put(). Any call
-// to SoapMessage.put() will cause a NoSuchMethodException in the calling class if the class is not recompiled.
-// If a solution to this compilation issue can be found, this class should be removed as an overlay. 
 public class AsymmetricBindingHandler extends AbstractBindingBuilder {
 
     private static final Logger LOG = LogUtils.getL7dLogger(AsymmetricBindingHandler.class);
@@ -140,7 +136,7 @@ public class AsymmetricBindingHandler extends AbstractBindingBuilder {
             new QName(abinding.getName().getNamespaceURI(), SPConstants.ONLY_SIGN_ENTIRE_HEADERS_AND_BODY));
     }
 
-private void doSignBeforeEncrypt() {
+    private void doSignBeforeEncrypt() {
         try {
             AbstractTokenWrapper initiatorWrapper = abinding.getInitiatorSignatureToken();
             if (initiatorWrapper == null) {
@@ -240,7 +236,7 @@ private void doSignBeforeEncrypt() {
 
             if (encToken != null) {
                 if (encToken.getToken() != null && !enc.isEmpty()) {
-                    final WSSecBase encr; // Liberty Change: Backport 4.x
+                    final WSSecBase encr;
                     if (encToken.getToken().getDerivedKeys() == DerivedKeys.RequireDerivedKeys) {
                         encr = doEncryptionDerived(encToken, enc);
                     } else {
@@ -783,7 +779,7 @@ private void doSignBeforeEncrypt() {
             }
 
             List<Reference> referenceList = sig.addReferencesToSign(sigParts);
-            if (!referenceList.isEmpty()) { 
+            if (!referenceList.isEmpty()) {
                 //Do signature
                 if (bottomUpElement == null) {
                     sig.computeSignature(referenceList, false, null);
@@ -866,6 +862,10 @@ private void doSignBeforeEncrypt() {
 
         List<WSHandlerResult> results = CastUtils.cast((List<?>)message.getExchange().getInMessage()
             .get(WSHandlerConstants.RECV_RESULTS));
+
+        if (results == null) {
+            return null;
+        }
 
         for (WSHandlerResult rResult : results) {
             List<WSSecurityEngineResult> wsSecEngineResults = rResult.getResults();

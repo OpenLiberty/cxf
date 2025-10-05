@@ -25,13 +25,13 @@
     <description>Apache CXF Runtime JOSE JAX-RS</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../../../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.rs.security.jose.jaxrs</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.rs.security.jose.jaxrs</cxf.module.name>
         <cxf.osgi.import>
             javax.activation;version="${cxf.osgi.javax.activation.version}",
             javax.annotation*;version="${cxf.osgi.javax.annotation.version}",
@@ -40,22 +40,22 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-security</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-security-jose</artifactId>
             <version>${project.version}</version>
         </dependency>

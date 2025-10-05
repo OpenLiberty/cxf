@@ -42,7 +42,8 @@ public class SCTTokenValidator extends STSTokenValidator {
         }
 
         transformedToken.parseSubject(
-            new WSSSAMLKeyInfoProcessor(data), data.getSigVerCrypto()
+            new WSSSAMLKeyInfoProcessor(data), data.getSigVerCrypto(),
+            data.getCallbackHandler()
         );
         SAMLKeyInfo keyInfo = transformedToken.getSubjectKeyInfo();
         byte[] secret = keyInfo.getSecret();

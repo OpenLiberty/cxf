@@ -21,7 +21,7 @@
     <jws:handler-chain>
         <jws:handler>
             <jws:handler-name>TrivialSOAPHandler</jws:handler-name>
-            <jws:handler-class>io.openliberty.org.apache.cxf.testutil.handler.TrivialSOAPHandler</jws:handler-class>
+            <jws:handler-class>org.apache.cxf.testutil.handler.TrivialSOAPHandler</jws:handler-class>
         </jws:handler>
     </jws:handler-chain>
 </jws:handler-chains>

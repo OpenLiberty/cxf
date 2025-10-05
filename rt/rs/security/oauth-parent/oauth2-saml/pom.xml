@@ -26,24 +26,24 @@
     <url>https://cxf.apache.org</url>
     <parent>
         <artifactId>cxf-rt-rs-security-oauth-parent</artifactId>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
-        <version>3.5.5.1</version>
+        <groupId>org.apache.cxf</groupId>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.rs.security.oauth2.saml</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.rs.security.oauth2.saml</cxf.module.name>
         <cxf.osgi.import>
             org.opensaml*;version="${cxf.opensaml.osgi.version.range}",
         </cxf.osgi.import>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-security-oauth2</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-security-xml</artifactId>
             <version>${project.version}</version>
         </dependency>

@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.openliberty.org.apache.cxf</groupId>
+    <groupId>org.apache.cxf</groupId>
     <artifactId>cxf7814-codegen</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>cxf7511-codegen</name>
 
     <properties>
-        <wadl.groupid>io.openliberty.org.apache.cxf.cxf7814</wadl.groupid>
+        <wadl.groupid>org.apache.cxf.cxf7814</wadl.groupid>
         <wadl.artifactid>cxf7814wadl</wadl.artifactid>
         <wadl.version>1.0.0</wadl.version>
     </properties>
@@ -16,7 +16,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>@project.version@</version>
         </dependency>
@@ -53,7 +53,7 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>io.openliberty.org.apache.cxf</groupId>
+                <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-wadl2java-plugin</artifactId>
                 <version>@project.version@</version>
                 <executions>

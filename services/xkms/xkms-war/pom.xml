@@ -19,20 +19,20 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+    <groupId>org.apache.cxf.services.xkms</groupId>
     <artifactId>cxf-services-xkms-war</artifactId>
     <packaging>war</packaging>
     <name>Apache CXF XKMS Service war deployment</name>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../../parent/pom.xml</relativePath>
     </parent>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -51,22 +51,22 @@
             <artifactId>spring-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+            <groupId>org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+            <groupId>org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-service</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+            <groupId>org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-x509-handlers</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
+            <groupId>org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-x509-repo-ldap</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -76,7 +76,7 @@
             <id>cxf25</id>
             <dependencies>
                 <dependency>
-                    <groupId>io.openliberty.org.apache.cxf</groupId>
+                    <groupId>org.apache.cxf</groupId>
                     <artifactId>cxf-rt-ws-mex</artifactId>
                     <version>${project.version}</version>
                 </dependency>

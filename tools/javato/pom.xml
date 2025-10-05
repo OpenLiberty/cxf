@@ -25,9 +25,9 @@
     <description>Apache CXF Command Line Tools JavaTo</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-tools</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
     </parent>
     <modules>
         <module>ws</module>

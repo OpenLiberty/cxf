@@ -19,12 +19,12 @@
     -->
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../parent</relativePath>
     </parent>
-    <groupId>io.openliberty.org.apache.cxf.karaf</groupId>
+    <groupId>org.apache.cxf.karaf</groupId>
     <artifactId>karaf-parent</artifactId>
     <packaging>pom</packaging>
     <name>Apache CXF Karaf Parent</name>

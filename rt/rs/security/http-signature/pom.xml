@@ -27,15 +27,15 @@
     </description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../../../parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>cxf-rt-rs-security-http-signature</artifactId>
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.rs.security.http.signature</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.rs.security.http.signature</cxf.module.name>
     </properties>
 
     <dependencies>
@@ -45,11 +45,11 @@
             <version>${cxf.tomitribe.http.signature.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-security</artifactId>
         </dependency>
         <dependency>
@@ -67,7 +67,7 @@
             <artifactId>jakarta.annotation-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
         </dependency>
         <dependency>

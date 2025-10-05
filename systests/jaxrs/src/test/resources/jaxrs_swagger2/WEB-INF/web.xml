@@ -23,7 +23,7 @@
     version="3.0">
   <filter> 
     <filter-name>xforwarded</filter-name>
-    <filter-class>io.openliberty.org.apache.cxf.systest.jaxrs.XForwardedServletFilter</filter-class> 
+    <filter-class>org.apache.cxf.systest.jaxrs.XForwardedServletFilter</filter-class> 
   </filter> 
   <filter-mapping> 
     <filter-name>xforwarded</filter-name>

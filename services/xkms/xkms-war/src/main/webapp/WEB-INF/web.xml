@@ -21,7 +21,7 @@
     <display-name>CXF STS</display-name>
     <servlet>
         <servlet-name>xkms</servlet-name>
-        <servlet-class>io.openliberty.org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
         <!-- <load-on-startup>1</load-on-startup> -->
         <init-param>
             <param-name>config-location</param-name>

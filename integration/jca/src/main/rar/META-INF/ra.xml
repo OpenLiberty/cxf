@@ -27,13 +27,13 @@
     </license>
     <resourceadapter>
         <!--
-    <connectionfactory-interface>io.openliberty.org.apache.cxf.connector.CXFConnectionFactory</connectionfactory-interface>
-    <connection-interface>io.openliberty.org.apache.cxf.connector.Connection</connection-interface>
+    <connectionfactory-interface>org.apache.cxf.connector.CXFConnectionFactory</connectionfactory-interface>
+    <connection-interface>org.apache.cxf.connector.Connection</connection-interface>
     -->
-        <resourceadapter-class>io.openliberty.org.apache.cxf.jca.cxf.ResourceAdapterImpl</resourceadapter-class>
+        <resourceadapter-class>org.apache.cxf.jca.cxf.ResourceAdapterImpl</resourceadapter-class>
         <outbound-resourceadapter>
             <connection-definition>
-                <managedconnectionfactory-class>io.openliberty.org.apache.cxf.jca.cxf.AssociatedManagedConnectionFactoryImpl</managedconnectionfactory-class>
+                <managedconnectionfactory-class>org.apache.cxf.jca.cxf.AssociatedManagedConnectionFactoryImpl</managedconnectionfactory-class>
                 <config-property>
                     <!-- 
               LogLevel deprecated.  Please use log management provided by application server. 
@@ -62,10 +62,10 @@
                     <config-property-type>java.lang.String</config-property-type>
                     <config-property-value>http://localhost:9999</config-property-value>
                 </config-property>
-                <connectionfactory-interface>io.openliberty.org.apache.cxf.connector.CXFConnectionFactory</connectionfactory-interface>
-                <connectionfactory-impl-class>io.openliberty.org.apache.cxf.jca.cxf.ConnectionFactoryImpl</connectionfactory-impl-class>
-                <connection-interface>io.openliberty.org.apache.cxf.connector.Connection</connection-interface>
-                <connection-impl-class>io.openliberty.org.apache.cxf.jca.cxf.ManagedConnectionImpl</connection-impl-class>
+                <connectionfactory-interface>org.apache.cxf.connector.CXFConnectionFactory</connectionfactory-interface>
+                <connectionfactory-impl-class>org.apache.cxf.jca.cxf.ConnectionFactoryImpl</connectionfactory-impl-class>
+                <connection-interface>org.apache.cxf.connector.Connection</connection-interface>
+                <connection-impl-class>org.apache.cxf.jca.cxf.ManagedConnectionImpl</connection-impl-class>
             </connection-definition>
             <transaction-support>NoTransaction</transaction-support>
             <authentication-mechanism>

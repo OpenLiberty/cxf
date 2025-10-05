@@ -23,9 +23,9 @@
     <name>CXF sample using the Aegis Binding without any webservice</name>
     <description>CXF sample using the Aegis Binding without any webservice</description>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
+        <groupId>org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
     </parent>
     <properties>
         <cxf.version>${project.version}</cxf.version>
@@ -46,7 +46,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>io.openliberty.org.apache.cxf.demo.aegis.commands.WriteZoo</mainClass>
+                                    <mainClass>org.apache.cxf.demo.aegis.commands.WriteZoo</mainClass>
                                     <arguments>
                                         <argument>zoo.xml</argument>
                                     </arguments>
@@ -72,7 +72,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>io.openliberty.org.apache.cxf.demo.aegis.commands.ReadZoo</mainClass>
+                                    <mainClass>org.apache.cxf.demo.aegis.commands.ReadZoo</mainClass>
                                     <arguments>
                                         <argument>zoo.xml</argument>
                                     </arguments>
@@ -86,9 +86,9 @@
     </profiles>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-databinding-aegis</artifactId>
-            <version>3.5.5.1</version>
+            <version>3.5.12-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>net.java.dev.stax-utils</groupId>

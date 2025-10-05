@@ -12,7 +12,7 @@
     -->
     <cache-template name="org.apache.cxf.ws.security.tokenstore.TokenStore">
         <key-type>java.lang.String</key-type>
-        <value-type>io.openliberty.org.apache.cxf.ws.security.tokenstore.SecurityToken</value-type>
+        <value-type>org.apache.cxf.ws.security.tokenstore.SecurityToken</value-type>
         <expiry>
             <ttl unit="seconds">3600</ttl>
         </expiry>

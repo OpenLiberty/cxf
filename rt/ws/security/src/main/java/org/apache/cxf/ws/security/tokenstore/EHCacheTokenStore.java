@@ -20,18 +20,12 @@
 package org.apache.cxf.ws.security.tokenstore;
 
 import java.io.Closeable;
-import java.io.File;
 import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.Supplier;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.buslifecycle.BusLifeCycleListener;
@@ -42,25 +36,17 @@ import org.ehcache.CacheManager;
 import org.ehcache.Status;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.CacheManagerBuilder;
-import org.ehcache.config.builders.ResourcePoolsBuilder;
-import org.ehcache.config.units.EntryUnit;
 import org.ehcache.core.util.ClassLoading;
-import org.ehcache.expiry.ExpiryPolicy;
 import org.ehcache.xml.XmlConfiguration;
-
 
 /**
  * An in-memory EHCache implementation of the TokenStore interface. The default TTL is 60 minutes
  * and the max TTL is 12 hours.
  */
 public class EHCacheTokenStore implements TokenStore, Closeable, BusLifeCycleListener {
-    // Liberty Change Start
-    protected static Duration timetoidle;
-    protected static Duration timetolive;
     private final Bus bus;
-    private Cache<String, SecurityToken> cache;
-    private CacheManager cacheManager;
-    // Liberty Change End
+    private final Cache<String, SecurityToken> cache;
+    private final CacheManager cacheManager;
     private final String key;
 
     public EHCacheTokenStore(String key, Bus b, URL configFileURL) throws TokenStoreException {
@@ -71,20 +57,17 @@ public class EHCacheTokenStore implements TokenStore, Closeable, BusLifeCycleLis
 
         this.key = key;
         try {
-
             // Exclude the endpoint info bit added in TokenStoreUtils when getting the template name
             String template = key;
             if (template.contains("-")) {
                 template = key.substring(0, key.lastIndexOf('-'));
             }
 
-            // Liberty Change Start: Backport 4.x
             // Set class loader cache of template object to SecurityToken classloader
             Map<String, ClassLoader> cacheClassLoaders = new HashMap<>();
             cacheClassLoaders.put(template, SecurityToken.class.getClassLoader());
             XmlConfiguration xmlConfig = new XmlConfiguration(configFileURL, ClassLoading.getDefaultClassLoader(),
                     cacheClassLoaders);
-            // Liberty Change End
 
             CacheConfigurationBuilder<String, SecurityToken> configurationBuilder =
                     xmlConfig.newCacheConfigurationBuilderFromTemplate(template,
@@ -99,79 +82,6 @@ public class EHCacheTokenStore implements TokenStore, Closeable, BusLifeCycleLis
             throw new TokenStoreException(e);
         }
     }
-
-    // Liberty Change Start
-    /**
-     * @param cachekey
-     * @param bus
-     * @param oldconfig
-     */
-    public EHCacheTokenStore(String cachekey, Bus bus, HashMap oldconfig) {
-        this.key = cachekey;
-        this.bus = bus;
-        this.cacheManager = null;
-        this.cache = null;
-        
-        Path diskstorePath = null;
-        String path = (String)oldconfig.get("getDiskStorePath");
-        if ("java.io.tmpdir".equals(path)) {
-            path = path + File.separator
-                + bus.getId();
-            
-        }
-        diskstorePath = Paths.get(path);
-        
-        int diskElements = (int)oldconfig.get("getMaxElementsOnDisk");
-        long heapEntries = (long)oldconfig.get("getMaxEntriesLocalHeap");
-        
-        boolean persistent = (boolean)oldconfig.get("isDiskPersistent");
-        boolean eternal = (boolean)oldconfig.get("isEternal");
-
-        ExpiryPolicy<Object, Object> customExpiry = null;
-        if (eternal) {
-            customExpiry = ExpiryPolicy.NO_EXPIRY;
-        } else {
-            timetoidle = Duration.of((long)oldconfig.get("getTimeToIdleSeconds"), ChronoUnit.SECONDS);         
-            timetolive = Duration.of((long)oldconfig.get("getTimeToLiveSeconds"), ChronoUnit.SECONDS);
-            customExpiry = new ExpiryPolicy<Object, Object>() {
-                
-                @Override
-                public String toString() {
-                    return "Custom Expiry";
-                }
-
-                @Override
-                public Duration getExpiryForCreation(Object key, Object value) {
-                    return timetolive;
-                }
-
-                @Override
-                public Duration getExpiryForAccess(Object key, Supplier<?> value) {
-                    return timetoidle;
-                }
-
-                @Override
-                public Duration getExpiryForUpdate(Object key, Supplier<?> oldValue, Object newValue) {
-                    return null;
-                }
-              };
-        }
-        
-        ResourcePoolsBuilder resourcePoolsBuilder = null;
-        CacheConfigurationBuilder<String, SecurityToken> configurationBuilder = null;
-        
-        resourcePoolsBuilder = ResourcePoolsBuilder.newResourcePoolsBuilder()
-                            .heap(heapEntries, EntryUnit.ENTRIES);
-        configurationBuilder = CacheConfigurationBuilder.newCacheConfigurationBuilder(
-                                   String.class, SecurityToken.class, resourcePoolsBuilder).withExpiry(customExpiry);
-            
-            
-        cacheManager = CacheManagerBuilder.newCacheManagerBuilder().withCache(cachekey, configurationBuilder).build();
-        cacheManager.init();
-        cache = cacheManager.getCache(cachekey, String.class, SecurityToken.class);
-                  
-    }
-	// Liberty Change Start
 
     public void add(SecurityToken token) {
         if (token != null && !StringUtils.isEmpty(token.getId())) {

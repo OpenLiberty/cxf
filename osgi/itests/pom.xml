@@ -20,44 +20,44 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../parent/pom.xml</relativePath>
     </parent>
-    <groupId>io.openliberty.org.apache.cxf.osgi.itests</groupId>
-    <artifactId>io.openliberty.org.apache.cxf.osgi.itests</artifactId>
+    <groupId>org.apache.cxf.osgi.itests</groupId>
+    <artifactId>org.apache.cxf.osgi.itests</artifactId>
     <name>Apache CXF :: OSGi :: Integration Tests</name>
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.osgi.itests</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.osgi.itests</cxf.module.name>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-testutils</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-jms</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-service-description-openapi-v3</artifactId>
         </dependency>
         <dependency>
@@ -86,7 +86,7 @@
 
         <!-- Karaf features -->
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf.karaf</groupId>
+            <groupId>org.apache.cxf.karaf</groupId>
             <artifactId>apache-cxf</artifactId>
             <version>${project.version}</version>
             <type>xml</type>

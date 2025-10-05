@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.openliberty.org.apache.cxf</groupId>
+    <groupId>org.apache.cxf</groupId>
     <artifactId>cxf7067-codegen</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>cxf7067-codegen</name>
 
     <properties>
-        <wsdl.groupid>io.openliberty.org.apache.cxf.cxf7067</wsdl.groupid>
+        <wsdl.groupid>org.apache.cxf.cxf7067</wsdl.groupid>
         <wsdl.artifactid>Cxf7067Service</wsdl.artifactid>
         <wsdl.version>1.0.0</wsdl.version>
     </properties>
@@ -44,7 +44,7 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>io.openliberty.org.apache.cxf</groupId>
+                <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>@project.version@</version>
                 <executions>

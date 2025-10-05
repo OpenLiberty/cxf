@@ -20,18 +20,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>cxf-microprofile-tck</artifactId>
-        <groupId>io.openliberty.org.apache.cxf.systests</groupId>
-        <version>3.5.5.1</version>
+        <groupId>org.apache.cxf.systests</groupId>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.openliberty.org.apache.cxf.systests</groupId>
+    <groupId>org.apache.cxf.systests</groupId>
     <artifactId>cxf-systests-microprofile-nocdi</artifactId>
     <name>Apache CXF MicroProfile No-CDI/Config Sys Tests</name>
     <description>Apache CXF System Tests - MicroProfile Rest Client No-CDI/Config Tests</description>
     <url>https://cxf.apache.org</url>
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.systests.microprofile.nocdi</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.systests.microprofile.nocdi</cxf.module.name>
         <cxf.wiremock.params>--port=8765</cxf.wiremock.params>
     </properties>
     <dependencies>
@@ -89,7 +89,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-mp-client</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>

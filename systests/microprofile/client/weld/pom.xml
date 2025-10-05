@@ -21,8 +21,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>cxf-microprofile-tck</artifactId>
-        <groupId>io.openliberty.org.apache.cxf.systests</groupId>
-        <version>3.5.5.1</version>
+        <groupId>org.apache.cxf.systests</groupId>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
     
@@ -31,7 +31,7 @@
     <name>Apache CXF System Tests - MicroProfile Rest Client TCK on Weld</name>
     
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.systests.microprofile.weld</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.systests.microprofile.weld</cxf.module.name>
     </properties>
     
     <dependencies>
@@ -76,7 +76,7 @@
             <artifactId>geronimo-config-impl</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-mp-client</artifactId>
         </dependency>
         <dependency>

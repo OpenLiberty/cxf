@@ -19,22 +19,22 @@
     -->
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../parent/pom.xml</relativePath>
     </parent>
-    <groupId>io.openliberty.org.apache.cxf.osgi.itests</groupId>
-    <artifactId>io.openliberty.org.apache.cxf.osgi.itests-felix</artifactId>
+    <groupId>org.apache.cxf.osgi.itests</groupId>
+    <artifactId>org.apache.cxf.osgi.itests-felix</artifactId>
     <name>Apache CXF :: OSGi :: Integration Tests pure felix</name>
 
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.osgi.itests_felix</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.osgi.itests_felix</cxf.module.name>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -48,27 +48,27 @@
             <version>${cxf.wsdl4j.bundle.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-wsdl</artifactId>
             <version>${project.version}</version>
         </dependency>
          <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-simple</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-databinding-jaxb</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-bindings-xml</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-bindings-soap</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -77,12 +77,12 @@
             <artifactId>${cxf.servlet-api.artifact}</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>${project.version}</version>
         </dependency>
          <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>${project.version}</version>
         </dependency>

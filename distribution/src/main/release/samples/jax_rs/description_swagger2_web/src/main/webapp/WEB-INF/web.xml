@@ -31,7 +31,7 @@
     <servlet>
         <display-name>CXF Service Servlet</display-name>
         <servlet-name>CXFServiceServlet</servlet-name>
-        <servlet-class>io.openliberty.org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>

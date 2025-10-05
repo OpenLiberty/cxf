@@ -5,16 +5,16 @@
 
     <persistence-unit name="test-hibernate-cxf-rt-rs-security-oauth2" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.Client</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.UserSubject</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.grants.code.ServerAuthorizationCodeGrant</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.grants.code.AuthorizationCodeGrant</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.tokens.bearer.BearerAccessToken</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.ServerAccessToken</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.AccessToken</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.OAuthPermission</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.tokens.refresh.RefreshToken</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.provider.TestingUserSubject</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.Client</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.UserSubject</class>
+        <class>org.apache.cxf.rs.security.oauth2.grants.code.ServerAuthorizationCodeGrant</class>
+        <class>org.apache.cxf.rs.security.oauth2.grants.code.AuthorizationCodeGrant</class>
+        <class>org.apache.cxf.rs.security.oauth2.tokens.bearer.BearerAccessToken</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.ServerAccessToken</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.AccessToken</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.OAuthPermission</class>
+        <class>org.apache.cxf.rs.security.oauth2.tokens.refresh.RefreshToken</class>
+        <class>org.apache.cxf.rs.security.oauth2.provider.TestingUserSubject</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
         <properties>
@@ -34,16 +34,16 @@
 
     <persistence-unit name="testUnitOpenJPA" transaction-type="RESOURCE_LOCAL">
         <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.Client</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.UserSubject</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.grants.code.ServerAuthorizationCodeGrant</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.grants.code.AuthorizationCodeGrant</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.tokens.bearer.BearerAccessToken</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.ServerAccessToken</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.AccessToken</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.common.OAuthPermission</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.tokens.refresh.RefreshToken</class>
-        <class>io.openliberty.org.apache.cxf.rs.security.oauth2.provider.TestingUserSubject</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.Client</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.UserSubject</class>
+        <class>org.apache.cxf.rs.security.oauth2.grants.code.ServerAuthorizationCodeGrant</class>
+        <class>org.apache.cxf.rs.security.oauth2.grants.code.AuthorizationCodeGrant</class>
+        <class>org.apache.cxf.rs.security.oauth2.tokens.bearer.BearerAccessToken</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.ServerAccessToken</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.AccessToken</class>
+        <class>org.apache.cxf.rs.security.oauth2.common.OAuthPermission</class>
+        <class>org.apache.cxf.rs.security.oauth2.tokens.refresh.RefreshToken</class>
+        <class>org.apache.cxf.rs.security.oauth2.provider.TestingUserSubject</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
         <properties>

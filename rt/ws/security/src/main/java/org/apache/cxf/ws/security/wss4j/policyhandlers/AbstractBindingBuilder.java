@@ -40,6 +40,9 @@ import javax.security.auth.callback.CallbackHandler;
 import javax.xml.XMLConstants;
 import javax.xml.crypto.dsig.Reference;
 import javax.xml.namespace.QName;
+import javax.xml.soap.SOAPException;
+import javax.xml.soap.SOAPHeader;
+import javax.xml.soap.SOAPMessage;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.xpath.XPath;
@@ -54,9 +57,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPHeader;
-import javax.xml.soap.SOAPMessage;
 import org.apache.cxf.attachment.AttachmentUtil;
 import org.apache.cxf.binding.soap.SoapMessage;
 import org.apache.cxf.binding.soap.saaj.SAAJUtils;
@@ -155,10 +155,6 @@ import org.apache.wss4j.policy.model.Wss10;
 import org.apache.wss4j.policy.model.Wss11;
 import org.apache.wss4j.policy.model.X509Token;
 import org.apache.wss4j.policy.model.X509Token.TokenType;
-
-import java.security.AccessController;
-import java.security.PrivilegedExceptionAction;
-import java.security.PrivilegedActionException;
 
 /**
  *
@@ -269,41 +265,6 @@ public abstract class AbstractBindingBuilder extends AbstractCommonBindingHandle
         }
         lastEncryptedKeyElement = el;
     }
-    // Liberty Change Start: Keep 3.5.5 method signature
-    protected WSSecUsernameToken addDKUsernameToken(UsernameToken token, byte[] salt, boolean useMac) {
-        assertToken(token);
-        if (!isTokenRequired(token.getIncludeTokenType())) {
-            return null;
-        }
-
-        String userName = (String)SecurityUtils.getSecurityPropertyValue(SecurityConstants.USERNAME, message);
-        if (!StringUtils.isEmpty(userName)) {
-            WSSecUsernameToken utBuilder = new WSSecUsernameToken(secHeader);
-            utBuilder.setIdAllocator(wssConfig.getIdAllocator());
-            utBuilder.setWsTimeSource(wssConfig.getCurrentTime());
-
-            String password =
-                (String)SecurityUtils.getSecurityPropertyValue(SecurityConstants.PASSWORD, message);
-            if (StringUtils.isEmpty(password)) {
-                password = getPassword(userName, token, WSPasswordCallback.USERNAME_TOKEN);
-            }
-
-            if (!StringUtils.isEmpty(password)) {
-                // If the password is available then build the token
-                utBuilder.setUserInfo(userName, password);
-                utBuilder.addDerivedKey(useMac,  1000);
-                utBuilder.prepare(salt);
-            } else {
-                unassertPolicy(token, "No password available");
-                return null;
-            }
-
-            return utBuilder;
-        }
-        unassertPolicy(token, "No username available");
-        return null;
-    }
-    // Liberty Change Stop
 
     protected void addEncryptedKeyElement(Element el) {
         if (lastEncryptedKeyElement != null) {
@@ -381,18 +342,7 @@ public abstract class AbstractBindingBuilder extends AbstractCommonBindingHandle
     }
 
     protected final TokenStore getTokenStore() throws TokenStoreException {
-        // Liberty Chagne Start: doPriv
-        try{
-        return AccessController.doPrivileged(new PrivilegedExceptionAction<TokenStore>() {
-            @Override
-            public TokenStore run() throws TokenStoreException {
-                return TokenStoreUtils.getTokenStore(message);
-            }
-        });
-    } catch (PrivilegedActionException e) {
-        throw new TokenStoreException(e.getCause());
-    }
-        // Liberty Change End
+        return TokenStoreUtils.getTokenStore(message);
     }
 
     protected WSSecTimestamp createTimestamp() {
@@ -665,7 +615,7 @@ public abstract class AbstractBindingBuilder extends AbstractCommonBindingHandle
     ) throws WSSecurityException {
         if (endorse && isTokenRequired(token.getIncludeTokenType())) {
             byte[] salt = UsernameTokenUtil.generateSalt(true);
-            WSSecUsernameToken utBuilder = addDKUsernameToken(token, salt); // Liberty Change: Backport 4.x
+            WSSecUsernameToken utBuilder = addDKUsernameToken(token, salt, true);
             if (utBuilder != null) {
                 utBuilder.prepare(salt);
                 addSupportingElement(utBuilder.getUsernameTokenElement());
@@ -916,7 +866,7 @@ public abstract class AbstractBindingBuilder extends AbstractCommonBindingHandle
         return null;
     }
 
-    protected WSSecUsernameToken addDKUsernameToken(UsernameToken token, byte[] salt) { // Liberty Change: Backport 4.x
+    protected WSSecUsernameToken addDKUsernameToken(UsernameToken token, byte[] salt, boolean useMac) {
         assertToken(token);
         if (!isTokenRequired(token.getIncludeTokenType())) {
             return null;
@@ -937,7 +887,7 @@ public abstract class AbstractBindingBuilder extends AbstractCommonBindingHandle
             if (!StringUtils.isEmpty(password)) {
                 // If the password is available then build the token
                 utBuilder.setUserInfo(userName, password);
-                utBuilder.addDerivedKey(1000); // Liberty Change: Backport 4.x
+                utBuilder.addDerivedKey(useMac,  1000);
                 utBuilder.prepare(salt);
             } else {
                 unassertPolicy(token, "No password available");
@@ -1504,7 +1454,7 @@ public abstract class AbstractBindingBuilder extends AbstractCommonBindingHandle
 
                         if (!found.contains(el)) {
                             found.add(el);
-                            final WSEncryptionPart part; // Liberty Change: Backport 4.x
+                            final WSEncryptionPart part;
                             boolean saml1 = WSS4JConstants.SAML_NS.equals(el.getNamespaceURI())
                                 && "Assertion".equals(el.getLocalName());
                             boolean saml2 = WSS4JConstants.SAML2_NS.equals(el.getNamespaceURI())
@@ -1580,15 +1530,7 @@ public abstract class AbstractBindingBuilder extends AbstractCommonBindingHandle
         AlgorithmSuiteType algType = binding.getAlgorithmSuite().getAlgorithmSuiteType();
         encrKey.setKeyEncAlgo(algType.getAsymmetricKeyWrap());
         encrKey.setMGFAlgorithm(algType.getMGFAlgo());
-        // Liberty Change Start: Add Key Agreement method if needed
-        if(algType.getKeyAgreement() != null) {
-            LOG.info("@TJJ KeyAgreement on algType = " + algType.getKeyAgreement());
-            encrKey.setKeyAgreementMethod(algType.getKeyAgreement());
-            
-            // Since Key Agreement is enabled, we need to use SymmetricKeyWrapping
-            encrKey.setKeyEncAlgo(algType.getSymmetricKeyWrap());
-        }
-        // Liberty Change End
+
         encrKey.prepare(crypto, symmetricKey);
 
         if (alsoIncludeToken) {

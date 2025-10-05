@@ -67,7 +67,7 @@
         <feature version="${cxf.saaj-impl.version}">saaj-impl</feature>
         <bundle start-level="25" dependency="true">mvn:joda-time/joda-time/${cxf.joda.time.version}</bundle>
         <bundle start-level="25" dependency="true">mvn:commons-codec/commons-codec/${cxf.commons-codec.version}</bundle>
-        <bundle start-level="25" dependency="true">mvn:io.openliberty.org.apache.santuario/xmlsec/${cxf.xmlsec.bundle.version}</bundle>
+        <bundle start-level="25" dependency="true">mvn:org.apache.santuario/xmlsec/${cxf.xmlsec.bundle.version}</bundle>
         <bundle start-level="25" dependency="true">mvn:com.google.guava/failureaccess/1.0.1</bundle>
         <bundle start-level="25" dependency="true">mvn:com.google.guava/guava/${cxf.guava.version}</bundle>
         <bundle start-level="25" dependency='true'>mvn:io.dropwizard.metrics/metrics-core/${cxf.dropwizard3.version}</bundle>
@@ -77,20 +77,20 @@
         <bundle start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/${cxf.bcel.bundle.version}</bundle>
         <bundle start-level="30" dependency="true">mvn:org.apache.neethi/neethi/${cxf.neethi.version}</bundle>
         <bundle start-level="30" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jasypt/${cxf.jasypt.bundle.version}</bundle>
-        <bundle start-level="30">mvn:io.openliberty.org.apache.wss4j/wss4j-bindings/${cxf.wss4j.version}</bundle>
-        <bundle start-level="30">mvn:io.openliberty.org.apache.wss4j/wss4j-ws-security-common/${cxf.wss4j.version}</bundle>
-        <bundle start-level="30">mvn:io.openliberty.org.apache.wss4j/wss4j-ws-security-dom/${cxf.wss4j.version}</bundle>
-        <bundle start-level="30">mvn:io.openliberty.org.apache.wss4j/wss4j-policy/${cxf.wss4j.version}</bundle>
-        <bundle start-level="30">mvn:io.openliberty.org.apache.wss4j/wss4j-ws-security-stax/${cxf.wss4j.version}</bundle>
-        <bundle start-level="30">mvn:io.openliberty.org.apache.wss4j/wss4j-ws-security-policy-stax/${cxf.wss4j.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.wss4j/wss4j-bindings/${cxf.wss4j.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.wss4j/wss4j-ws-security-common/${cxf.wss4j.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.wss4j/wss4j-ws-security-dom/${cxf.wss4j.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.wss4j/wss4j-policy/${cxf.wss4j.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.wss4j/wss4j-ws-security-stax/${cxf.wss4j.version}</bundle>
+        <bundle start-level="30">mvn:org.apache.wss4j/wss4j-ws-security-policy-stax/${cxf.wss4j.version}</bundle>
     </feature>
     <feature name="cxf-core" version="${project.version}">
         <feature version="${project.version}">cxf-specs</feature>
         <bundle start-level="30" dependency="true">mvn:org.apache.ws.xmlschema/xmlschema-core/${cxf.xmlschema.version}</bundle>
         <bundle start-level="25" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlresolver/${cxf.xmlresolver.bundle.version}</bundle>
         <bundle start-level="30" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.fastinfoset/${cxf.fastinfoset.bundle.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-core/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-management/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-core/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-management/${project.version}</bundle>
         <conditional>
             <condition>shell</condition>
             <feature version="${project.version}">cxf-commands</feature>
@@ -99,36 +99,36 @@
     <feature name="cxf-commands" version="${project.version}">
         <feature>shell</feature>
         <feature version="${project.version}">cxf-core</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf.karaf/cxf-karaf-commands/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf.karaf/cxf-karaf-commands/${project.version}</bundle>
     </feature>
     <feature name="cxf-wsdl" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
         <bundle start-level="30" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.wsdl4j/${cxf.wsdl4j.bundle.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-wsdl/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-wsdl/${project.version}</bundle>
     </feature>
     <feature name="cxf-ws-policy" version="${project.version}">
         <feature version="${project.version}">cxf-wsdl</feature>
         <bundle start-level="30" dependency="true">mvn:org.apache.neethi/neethi/${cxf.neethi.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-ws-policy/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-ws-policy/${project.version}</bundle>
     </feature>
     <feature name="cxf-ws-addr" version="${project.version}">
         <feature version="${project.version}">cxf-ws-policy</feature>
         <feature version="${project.version}">cxf-bindings-soap</feature>
         <feature version="${project.version}">cxf-databinding-jaxb</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-ws-addr/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-ws-addr/${project.version}</bundle>
     </feature>
     <feature name="cxf-ws-rm" version="${project.version}">
         <feature version="${project.version}">cxf-ws-policy</feature>
         <feature version="${project.version}">cxf-ws-addr</feature>
         <feature version="${project.version}">cxf-ws-security</feature>
         <feature version="${project.version}">cxf-databinding-jaxb</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-ws-rm/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-ws-rm/${project.version}</bundle>
     </feature>
     <feature name="cxf-ws-mex" version="${project.version}">
         <feature version="${project.version}">cxf-ws-policy</feature>
         <feature version="${project.version}">cxf-ws-addr</feature>
         <feature version="${project.version}">cxf-jaxws</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-ws-mex/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-ws-mex/${project.version}</bundle>
     </feature>
     <feature name="cxf-ws-security" version="${project.version}">
         <feature prerequisite="true">wrap</feature>
@@ -138,28 +138,28 @@
         <feature version="${project.version}">cxf-ws-addr</feature>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/${cxf.geronimo.jta.version}</bundle>
         <bundle start-level="40" dependency="true">mvn:org.ehcache/ehcache/${cxf.ehcache3.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-ws-security/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-ws-security/${project.version}</bundle>
     </feature>
     <feature name="cxf-rt-security" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-security/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-security/${project.version}</bundle>
     </feature>
     <feature name="cxf-rt-security-saml" version="${project.version}">
         <feature version="${project.version}">cxf-rt-security</feature>
         <feature version="${cxf.wss4j.version}">wss4j</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-security-saml/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-security-saml/${project.version}</bundle>
     </feature>
     <feature name="cxf-http-client" version="${project.version}">
         <!-- Can be used instead cxf-http for a smaller footprint -->
         <feature version="${project.version}">cxf-core</feature>
         <bundle start-level="40">mvn:${cxf.servlet-api.group}/${cxf.servlet-api.artifact}/${cxf.servlet-api.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-http/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-http/${project.version}</bundle>
     </feature>
 
     <feature name="cxf-http" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
         <feature>http</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-http/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-http/${project.version}</bundle>
     </feature>
     <!--
       This feature can be used to depend on the feature providing a HttpDestinationFactory extension
@@ -176,7 +176,7 @@
     <feature name="cxf-http-jetty" version="${project.version}">
         <feature version="${project.version}">cxf-http</feature>
         <feature version="[9,11)">jetty</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-http-jetty/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-http-jetty/${project.version}</bundle>
         <capability>
             cxf.http.provider;name=jetty
         </capability>
@@ -186,7 +186,7 @@
         <bundle start-level="40">mvn:org.apache.httpcomponents/httpcore-osgi/${cxf.httpcomponents.core.version}</bundle>
         <bundle start-level="40">mvn:org.apache.httpcomponents/httpclient-osgi/${cxf.httpcomponents.client.version}</bundle>
         <bundle start-level="40">mvn:org.apache.httpcomponents/httpasyncclient-osgi/${cxf.httpcomponents.asyncclient.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-http-hc/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-http-hc/${project.version}</bundle>
     </feature>
     <feature name="cxf-http-netty-client" version="${project.version}">
         <feature version="${project.version}">cxf-http</feature>
@@ -204,7 +204,7 @@
         <bundle start-level="40">mvn:io.netty/netty-codec/${cxf.netty.version}</bundle>
         <bundle start-level="40">mvn:io.netty/netty-codec-http/${cxf.netty.version}</bundle>
         <bundle start-level="40">mvn:io.netty/netty-codec-http2/${cxf.netty.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-http-netty-client/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-http-netty-client/${project.version}</bundle>
     </feature>
     <feature name="cxf-http-netty-server" version="${project.version}">
         <feature version="${project.version}">cxf-http</feature>
@@ -220,7 +220,7 @@
         <bundle start-level="40">mvn:io.netty/netty-resolver/${cxf.netty.version}</bundle>
         <bundle start-level="40">mvn:io.netty/netty-codec/${cxf.netty.version}</bundle>
         <bundle start-level="40">mvn:io.netty/netty-codec-http/${cxf.netty.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-http-netty-server/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-http-netty-server/${project.version}</bundle>
         <capability>
             cxf.http.provider;name=netty
         </capability>
@@ -228,7 +228,7 @@
     <feature name="cxf-http-undertow" version="${project.version}">
         <feature version="${project.version}">cxf-http</feature>
         <feature>pax-http-undertow</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-http-undertow/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-http-undertow/${project.version}</bundle>
         <capability>
             cxf.http.provider;name=undertow
         </capability>
@@ -236,16 +236,16 @@
     <feature name="cxf-bindings-soap" version="${project.version}">
         <feature version="${project.version}">cxf-wsdl</feature>
         <feature version="${cxf.saaj-impl.version}">saaj-impl</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-bindings-xml/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-bindings-soap/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-bindings-xml/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-bindings-soap/${project.version}</bundle>
     </feature>
     <feature name="cxf-jaxws" version="${project.version}">
         <feature version="${project.version}">cxf-wsdl</feature>
         <feature version="${project.version}">cxf-databinding-jaxb</feature>
         <feature version="${project.version}">cxf-bindings-soap</feature>
         <feature version="${project.version}">cxf-http</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-frontend-simple/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-frontend-jaxws/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-frontend-simple/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-frontend-jaxws/${project.version}</bundle>
     </feature>
     <feature name="cxf-jaxrs" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
@@ -253,36 +253,36 @@
         <feature version="${project.version}">cxf-jackson</feature>
         <feature version="${project.version}">cxf-rt-security</feature>
         <bundle start-level="30" dependency="true">mvn:org.codehaus.jettison/jettison/${cxf.jettison.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-extension-providers/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-extension-search/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-json-basic/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-service-description/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-frontend-jaxrs/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-client/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-extension-providers/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-extension-search/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-json-basic/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-service-description/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-frontend-jaxrs/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-client/${project.version}</bundle>
     </feature>
     <feature name="cxf-rs-security-xml" version="${project.version}">
         <feature version="${project.version}">cxf-jaxrs</feature>
         <feature version="${project.version}">cxf-rt-security-saml</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-security-xml/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-security-xml/${project.version}</bundle>
     </feature>
     <feature name="cxf-rs-security-sso-saml" version="${project.version}">
         <feature version="${project.version}">cxf-rs-security-xml</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-security-sso-saml/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-security-sso-saml/${project.version}</bundle>
     </feature>
     <feature name="cxf-rs-security-cors" version="${project.version}">
         <feature version="${project.version}">cxf-jaxrs</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-security-cors/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-security-cors/${project.version}</bundle>
     </feature>
     <feature name="cxf-rs-security-jose" version="${project.version}">
         <feature version="${project.version}">cxf-jaxrs</feature>
         <feature version="${project.version}">cxf-rt-security</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-json-basic/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-security-jose/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-security-jose-jaxrs/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-json-basic/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-security-jose/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-security-jose-jaxrs/${project.version}</bundle>
     </feature>
     <feature name="cxf-rs-security-oauth2" version="${project.version}">
         <feature version="${project.version}">cxf-rs-security-jose</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-security-oauth2/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-security-oauth2/${project.version}</bundle>
     </feature>
     <feature name="cxf-jackson" version="${project.version}">
         <!-- Required by jackson-dataformat-yaml -->
@@ -308,13 +308,13 @@
         <bundle start-level="35">mvn:io.zipkin.reporter2/zipkin-reporter-brave/${cxf.brave.reporter.version}</bundle>
         <bundle start-level="35">mvn:io.zipkin.brave/brave/${cxf.brave.version}</bundle>
         <bundle start-level="35">mvn:io.zipkin.brave/brave-instrumentation-http/${cxf.brave.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-integration-tracing-brave/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-integration-tracing-brave/${project.version}</bundle>
     </feature>
     <feature name="cxf-tracing-opentracing" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
         <bundle start-level="35">wrap:mvn:io.opentracing/opentracing-api/${cxf.opentracing.version}</bundle>
         <bundle start-level="35">wrap:mvn:io.opentracing/opentracing-util/${cxf.opentracing.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-integration-tracing-opentracing/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-integration-tracing-opentracing/${project.version}</bundle>
     </feature>
     <feature name="cxf-tracing-opentelemetry" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
@@ -323,14 +323,14 @@
         <bundle start-level="35">wrap:mvn:io.opentelemetry.semconv/opentelemetry-semconv/${cxf.opentelemetry.semconv.version}</bundle>
         <bundle start-level="35">wrap:mvn:io.opentelemetry.semconv/opentelemetry-semconv-incubating/${cxf.opentelemetry.semconv.version}</bundle>
         <bundle start-level="40">mvn:${cxf.servlet-api.group}/${cxf.servlet-api.artifact}/${cxf.servlet-api.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-integration-tracing-opentelemetry/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-integration-tracing-opentelemetry/${project.version}</bundle>
     </feature>
     <feature name="cxf-rs-description-swagger2" version="${project.version}">
         <feature version="${project.version}">cxf-jaxrs</feature>
         <feature version="${project.version}">cxf-jackson</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-service-description-common-openapi/${project.version}</bundle>
-        <bundle start-level="35">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-service-description-swagger-ui/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-service-description-swagger/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-service-description-common-openapi/${project.version}</bundle>
+        <bundle start-level="35">mvn:org.apache.cxf/cxf-rt-rs-service-description-swagger-ui/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-service-description-swagger/${project.version}</bundle>
         <bundle start-level="35" dependency="true">mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${cxf.jackson.version}</bundle>
         <bundle start-level="10" dependency="true">mvn:jakarta.validation/jakarta.validation-api/${cxf.validation.api.version}</bundle>
         <bundle start-level="35" dependency="true">mvn:org.apache.commons/commons-lang3/${cxf.commons-lang3.version}</bundle>
@@ -346,9 +346,9 @@
     <feature name="cxf-rs-description-openapi-v3" version="${project.version}">
         <feature version="${project.version}">cxf-jaxrs</feature>
         <feature version="${project.version}">cxf-jackson</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-service-description-common-openapi/${project.version}</bundle>
-        <bundle start-level="35">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-service-description-swagger-ui/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-service-description-openapi-v3/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-service-description-common-openapi/${project.version}</bundle>
+        <bundle start-level="35">mvn:org.apache.cxf/cxf-rt-rs-service-description-swagger-ui/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-service-description-openapi-v3/${project.version}</bundle>
         <bundle start-level="35" dependency="true">mvn:com.fasterxml.jackson.datatype/jackson-datatype-jsr310/${cxf.jackson.version}</bundle>
         <bundle start-level="35" dependency="true">mvn:${cxf.servlet-api.group}/${cxf.servlet-api.artifact}/${cxf.servlet-api.version}</bundle>
         <bundle start-level="10" dependency="true">mvn:jakarta.validation/jakarta.validation-api/${cxf.validation.api.version}</bundle>
@@ -364,56 +364,56 @@
     <feature name="cxf-databinding-aegis" version="${project.version}">
         <feature version="${project.version}">cxf-wsdl</feature>
         <feature version="${project.version}">cxf-bindings-soap</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-databinding-aegis/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-databinding-aegis/${project.version}</bundle>
     </feature>
     <feature name="cxf-databinding-jaxb" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
         <feature version="${project.version}">cxf-wsdl</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-databinding-jaxb/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-databinding-jaxb/${project.version}</bundle>
     </feature>
     <feature name="cxf-features-clustering" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-features-clustering/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-features-clustering/${project.version}</bundle>
     </feature>
     <feature name="cxf-features-logging" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-features-logging/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-features-logging/${project.version}</bundle>
     </feature>
     <feature name="cxf-features-throttling" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-features-throttling/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-features-throttling/${project.version}</bundle>
     </feature>
     <feature name="cxf-features-metrics" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
         <bundle start-level="40" dependency='true'>mvn:io.dropwizard.metrics/metrics-core/${cxf.dropwizard4.version}</bundle>
         <bundle start-level="40" dependency='true'>mvn:io.dropwizard.metrics/metrics-jmx/${cxf.dropwizard4.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-features-metrics/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-features-metrics/${project.version}</bundle>
     </feature>
     <feature name="cxf-bindings-corba" version="${project.version}">
         <feature prerequisite="true">wrap</feature>
         <feature version="${project.version}">cxf-wsdl</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-bindings-corba/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-bindings-corba/${project.version}</bundle>
         <bundle start-level="40" dependency="true">wrap:mvn:org.jacorb/jacorb-omgapi/3.7</bundle>
     </feature>
     <feature name="cxf-bindings-coloc" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-bindings-coloc/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-bindings-coloc/${project.version}</bundle>
     </feature>
     <feature name="cxf-transports-local" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-local/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-local/${project.version}</bundle>
     </feature>
     <feature name="cxf-transports-jms" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
         <feature version="${project.version}">cxf-bindings-soap</feature>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/${cxf.geronimo.jta.version}</bundle>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${cxf.geronimo.jms.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-jms/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-jms/${project.version}</bundle>
     </feature>
     <feature name="cxf-transports-udp" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
         <bundle dependency="true">mvn:org.apache.mina/mina-core/${cxf.mina.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-udp/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-udp/${project.version}</bundle>
     </feature>
     <feature name="cxf-transports-websocket-client" version="${project.version}">
         <feature version="${project.version}">cxf-http</feature>
@@ -433,12 +433,12 @@
         <bundle dependency='true'>mvn:io.netty/netty-codec-socks/${cxf.netty.version}</bundle>
         <bundle dependency='true'>mvn:org.reactivestreams/reactive-streams/${cxf.reactivestreams.version}</bundle>
         <bundle dependency='true'>mvn:com.typesafe.netty/netty-reactive-streams/2.0.4</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-websocket/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-websocket/${project.version}</bundle>
     </feature>
     <feature name="cxf-transports-websocket-server" version="${project.version}">
         <feature version="${project.version}">cxf-http</feature>
         <bundle dependency='true'>mvn:org.atmosphere/atmosphere-runtime/${cxf.atmosphere.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-transports-websocket/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-transports-websocket/${project.version}</bundle>
         <capability>
             cxf.http.provider;name=websocket
         </capability>
@@ -446,7 +446,7 @@
     <feature name="cxf-sse" version="${project.version}">
         <feature version="${project.version}">cxf-http</feature>
         <feature version="${project.version}">cxf-jaxrs</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-sse/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-sse/${project.version}</bundle>
         <capability>
             cxf.http.provider;name=sse
         </capability>
@@ -454,13 +454,13 @@
     <feature name="cxf-javascript" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
         <feature version="${project.version}">cxf-bindings-soap</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-javascript/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-javascript/${project.version}</bundle>
     </feature>
     <feature name="cxf-frontend-javascript" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
         <feature version="${project.version}">cxf-jaxws</feature>
         <bundle start-level="40" dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.rhino/${cxf.rhino.bundle.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-frontend-js/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-frontend-js/${project.version}</bundle>
     </feature>
     <feature name="cxf-xjc-runtime" version="${project.version}">
         <feature version="${project.version}">cxf-jaxb</feature>
@@ -479,17 +479,17 @@
         <bundle start-level="35" dependency="true">mvn:org.apache.commons/commons-lang3/${cxf.commons-lang3.version}</bundle>
         <bundle start-level="35" dependency="true">mvn:org.apache.commons/commons-text/${cxf.commons-text.version}</bundle>
         <bundle dependency="true">mvn:org.apache.velocity/velocity-engine-core/${cxf.velocity.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-common/${project.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-java2ws/${project.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-misctools/${project.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-validator/${project.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-wadlto-jaxrs/${project.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-wsdlto-core/${project.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-wsdlto-databinding-jaxb/${project.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-wsdlto-frontend-javascript/${project.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-wsdlto-frontend-jaxws/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-tools-common/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-tools-java2ws/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-tools-misctools/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-tools-validator/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-tools-wadlto-jaxrs/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-tools-wsdlto-core/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-tools-wsdlto-databinding-jaxb/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-tools-wsdlto-frontend-javascript/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf/cxf-tools-wsdlto-frontend-jaxws/${project.version}</bundle>
         <!-- need antlr
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-tools-corba/${project.version}</bundle-->
+        <bundle>mvn:org.apache.cxf/cxf-tools-corba/${project.version}</bundle-->
     </feature>
     <feature name="cxf" version="${project.version}">
         <feature version="${project.version}">cxf-core</feature>
@@ -518,26 +518,26 @@
         <feature version="${project.version}">cxf-tools</feature>
         -->
         <!-- need msv
-        <bundle>mvn:io.openliberty.org.apache.cxf/cxf-wstx-msv-validation/${project.version}</bundle-->
+        <bundle>mvn:org.apache.cxf/cxf-wstx-msv-validation/${project.version}</bundle-->
     </feature>
     <feature name="cxf-sts" version="${project.version}">
         <feature prerequisite="true">wrap</feature>
         <bundle start-level="40" dependency="true">mvn:com.hazelcast/hazelcast/${cxf.hazelcast.version}</bundle>
         <bundle start-level="40" dependency="true">wrap:mvn:org.ehcache/ehcache/${cxf.ehcache3.version}$overwrite=merge&amp;Import-Package=javax.xml.bind*,*;resolution:=optional</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-json-basic/${project.version}</bundle>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-rt-rs-security-jose/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-json-basic/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-rt-rs-security-jose/${project.version}</bundle>
         <feature version="${project.version}">cxf-core</feature>
         <feature version="${project.version}">cxf-ws-security</feature>
         <feature version="${project.version}">cxf-http</feature>
-        <bundle>mvn:io.openliberty.org.apache.cxf.services.sts/cxf-services-sts-core/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf.services.sts/cxf-services-sts-core/${project.version}</bundle>
     </feature>
     <feature name="cxf-wsn-api" version="${project.version}">
         <feature version="${project.version}">cxf-ws-addr</feature>
         <feature version="${project.version}">cxf-jaxws</feature>
-        <bundle>mvn:io.openliberty.org.apache.cxf.services.wsn/cxf-services-wsn-api/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf.services.wsn/cxf-services-wsn-api/${project.version}</bundle>
     </feature>
     <feature name="cxf-wsn" version="${project.version}">
-        <config name="io.openliberty.org.apache.cxf.wsn">
+        <config name="org.apache.cxf.wsn">
             cxf.wsn.activemq = vm:localhost
             cxf.wsn.rootUrl = http://0.0.0.0:8182
             cxf.wsn.context = /wsn
@@ -552,18 +552,18 @@
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/${cxf.geronimo.jms.version}</bundle>
         <bundle dependency="true">mvn:org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/${cxf.geronimo.j2ee.management.version}</bundle>
         <bundle dependency="true">mvn:org.apache.activemq/activemq-osgi/${cxf.activemq.version}</bundle>
-        <bundle>mvn:io.openliberty.org.apache.cxf.services.wsn/cxf-services-wsn-core/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf.services.wsn/cxf-services-wsn-core/${project.version}</bundle>
     </feature>
     <feature name="cxf-ws-discovery-api" version="${project.version}">
         <feature version="${project.version}">cxf-transports-udp</feature>
         <feature version="${project.version}">cxf-ws-addr</feature>
         <feature version="${project.version}">cxf-jaxws</feature>
         <feature>aries-blueprint</feature>
-        <bundle>mvn:io.openliberty.org.apache.cxf.services.ws-discovery/cxf-services-ws-discovery-api/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf.services.ws-discovery/cxf-services-ws-discovery-api/${project.version}</bundle>
     </feature>
     <feature name="cxf-ws-discovery" version="${project.version}">
         <feature version="${project.version}">cxf-ws-discovery-api</feature>
-        <bundle>mvn:io.openliberty.org.apache.cxf.services.ws-discovery/cxf-services-ws-discovery-service/${project.version}</bundle>
+        <bundle>mvn:org.apache.cxf.services.ws-discovery/cxf-services-ws-discovery-service/${project.version}</bundle>
     </feature>
 
     <feature name="cxf-bean-validation-core" version="${project.version}">
@@ -596,6 +596,6 @@
     <feature name="cxf-jaxrs-cdi" version="${project.version}">
         <feature version="${project.version}">cxf-jaxrs</feature>
         <feature>pax-cdi</feature>
-        <bundle start-level="40">mvn:io.openliberty.org.apache.cxf/cxf-integration-cdi/${project.version}</bundle>
+        <bundle start-level="40">mvn:org.apache.cxf/cxf-integration-cdi/${project.version}</bundle>
     </feature>
 </features>

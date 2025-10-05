@@ -172,7 +172,8 @@ public abstract class AbstractSamlInHandler implements ContainerRequestFilter {
 
                 assertion.verifySignature(samlKeyInfo);
                 assertion.parseSubject(
-                    new WSSSAMLKeyInfoProcessor(data), data.getSigVerCrypto()
+                    new WSSSAMLKeyInfoProcessor(data), data.getSigVerCrypto(),
+                    data.getCallbackHandler()
                 );
             } else if (getTLSCertificates(message) == null) {
                 throwFault("Assertion must be signed", null);

@@ -4,9 +4,9 @@
              version="2.0">
    <persistence-unit name="test-hibernate-cxf-rt-rs-extension-search" transaction-type="RESOURCE_LOCAL">
      <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-     <class>io.openliberty.org.apache.cxf.jaxrs.ext.search.jpa.Book</class>
-     <class>io.openliberty.org.apache.cxf.jaxrs.ext.search.jpa.Library</class>
-     <class>io.openliberty.org.apache.cxf.jaxrs.ext.search.jpa.BookReview</class>
+     <class>org.apache.cxf.jaxrs.ext.search.jpa.Book</class>
+     <class>org.apache.cxf.jaxrs.ext.search.jpa.Library</class>
+     <class>org.apache.cxf.jaxrs.ext.search.jpa.BookReview</class>
      <exclude-unlisted-classes>true</exclude-unlisted-classes>
      <properties>
         <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:books-jpa"/>
@@ -20,12 +20,12 @@
    </persistence-unit>
    <persistence-unit name="testUnitOpenJPA" transaction-type="RESOURCE_LOCAL">
      <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
-     <class>io.openliberty.org.apache.cxf.jaxrs.ext.search.jpa.Book</class>
-     <class>io.openliberty.org.apache.cxf.jaxrs.ext.search.jpa.Library</class>
-     <class>io.openliberty.org.apache.cxf.jaxrs.ext.search.jpa.OwnerAddress</class>
-     <class>io.openliberty.org.apache.cxf.jaxrs.ext.search.jpa.OwnerInfo</class>
-     <class>io.openliberty.org.apache.cxf.jaxrs.ext.search.jpa.Name</class>
-     <class>io.openliberty.org.apache.cxf.jaxrs.ext.search.jpa.BookReview</class>
+     <class>org.apache.cxf.jaxrs.ext.search.jpa.Book</class>
+     <class>org.apache.cxf.jaxrs.ext.search.jpa.Library</class>
+     <class>org.apache.cxf.jaxrs.ext.search.jpa.OwnerAddress</class>
+     <class>org.apache.cxf.jaxrs.ext.search.jpa.OwnerInfo</class>
+     <class>org.apache.cxf.jaxrs.ext.search.jpa.Name</class>
+     <class>org.apache.cxf.jaxrs.ext.search.jpa.BookReview</class>
      <exclude-unlisted-classes>true</exclude-unlisted-classes>
      <properties>
         <property name="openjpa.ConnectionURL" value="jdbc:hsqldb:mem:books-jpa"/>

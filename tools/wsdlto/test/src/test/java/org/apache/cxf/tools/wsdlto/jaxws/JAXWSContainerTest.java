@@ -39,6 +39,7 @@ import org.apache.cxf.tools.common.model.JavaMethod;
 import org.apache.cxf.tools.common.model.JavaModel;
 import org.apache.cxf.tools.common.model.JavaPort;
 import org.apache.cxf.tools.common.model.JavaServiceClass;
+import org.apache.cxf.tools.validator.ServiceValidator;
 import org.apache.cxf.tools.wsdlto.core.DataBindingProfile;
 import org.apache.cxf.tools.wsdlto.core.FrontEndProfile;
 import org.apache.cxf.tools.wsdlto.core.PluginLoader;
@@ -48,6 +49,7 @@ import org.apache.cxf.tools.wsdlto.frontend.jaxws.processor.WSDLToJavaProcessor;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -228,8 +230,10 @@ public class JAXWSContainerTest extends ProcessorTestBase {
 
     @Test
     public void testGetServceValidator() throws Exception {
-        // Skip this test as the package structure has changed from org.apache.cxf to io.openliberty.org.apache.cxf
-        // The validators are now in a different package
+        JAXWSContainer container = new JAXWSContainer(null);
+        List<ServiceValidator> validators = container.getServiceValidators();
+        assertNotNull(validators);
+        assertFalse(validators.isEmpty());
     }
 
     protected String getLocation(String wsdlFile) throws URISyntaxException {

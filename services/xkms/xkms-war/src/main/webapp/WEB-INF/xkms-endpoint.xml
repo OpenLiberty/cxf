@@ -54,7 +54,7 @@
                 <bean class="org.apache.cxf.xkms.model.extensions.ClassArrayFactoryBean">
                     <property name="classNames">
                         <list>
-                            <value>io.openliberty.org.apache.cxf.xkms.model.extensions.ResultDetails</value>
+                            <value>org.apache.cxf.xkms.model.extensions.ResultDetails</value>
                         </list>
                     </property>
                 </bean>

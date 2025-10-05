@@ -22,28 +22,28 @@
         <service-name-pattern xmlns:ns1="http://apache.org/handler_test">ns1:unknownservice</service-name-pattern>
         <handler>
             <handler-name>TestUnusedHandler</handler-name>
-            <handler-class>io.openliberty.org.apache.cxf.systest.handlers.TestUnusedHandler</handler-class>
+            <handler-class>org.apache.cxf.systest.handlers.TestUnusedHandler</handler-class>
         </handler>
     </handler-chain>
     <handler-chain>
         <port-name-pattern xmlns:ns1="http://apache.org/handler_test">ns1:unknownport</port-name-pattern>
         <handler>
             <handler-name>TestUnusedHandler</handler-name>
-            <handler-class>io.openliberty.org.apache.cxf.systest.handlers.TestUnusedHandler</handler-class>
+            <handler-class>org.apache.cxf.systest.handlers.TestUnusedHandler</handler-class>
         </handler>
     </handler-chain>
     <handler-chain>
         <protocol-bindings>http://schemas.xmlsoap.org/wsdl/soap/http</protocol-bindings>
         <handler>
             <handler-name>TestUnusedHandler</handler-name>
-            <handler-class>io.openliberty.org.apache.cxf.systest.handlers.TestUnusedHandler</handler-class>
+            <handler-class>org.apache.cxf.systest.handlers.TestUnusedHandler</handler-class>
         </handler>
     </handler-chain>
     <handler-chain>
         <protocol-bindings>unknownbinding</protocol-bindings>
         <handler>
             <handler-name>TestUnusedHandler</handler-name>
-            <handler-class>io.openliberty.org.apache.cxf.systest.handlers.TestUnusedHandler</handler-class>
+            <handler-class>org.apache.cxf.systest.handlers.TestUnusedHandler</handler-class>
         </handler>
     </handler-chain>
 </handler-chains>

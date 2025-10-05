@@ -25,25 +25,25 @@
     <description>Apache CXF Runtime SAML Security functionality</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.5.1</version>
+        <version>3.5.12-SNAPSHOT</version>
         <relativePath>../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>io.openliberty.org.apache.cxf.security.saml</cxf.module.name>
+        <cxf.module.name>org.apache.cxf.security.saml</cxf.module.name>
         <cxf.osgi.import>
             org.opensaml*;version="${cxf.opensaml.osgi.version.range}",
         </cxf.osgi.import>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>io.openliberty.org.apache.cxf</groupId>
+            <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-security</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.openliberty.org.apache.wss4j</groupId>
+            <groupId>org.apache.wss4j</groupId>
             <artifactId>wss4j-ws-security-dom</artifactId>
         </dependency>
         <dependency>
@@ -55,27 +55,6 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.openliberty.org.opensaml</groupId>
-            <artifactId>opensaml-xacml-api</artifactId>
-            <version>4.3.2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>net.shibboleth</groupId>
-            <artifactId>parent</artifactId>
-            <version>11.3.7</version>
-            <type>pom</type>
-        </dependency>        
-        <dependency>
-            <groupId>io.openliberty.org.opensaml</groupId>
-            <artifactId>opensaml-xacml-saml-impl</artifactId>
-            <version>4.3.2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.openliberty.net.shibboleth.utilities</groupId>
-            <artifactId>java-support</artifactId>
-            <version>8.4.2</version>
         </dependency>
     </dependencies>
 </project>

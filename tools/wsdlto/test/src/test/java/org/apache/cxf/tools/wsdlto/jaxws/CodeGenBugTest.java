@@ -770,12 +770,7 @@ public class CodeGenBugTest extends AbstractCodeGenTest {
 
             Message msg = new Message("WRAPPER_STYLE_NAME_COLLISION", UniqueBodyValidator.LOG, elementName,
                                       stringName, intName);
-            // The error message has changed due to package name change
-            // from org.apache.cxf to io.openliberty.org.apache.cxf
-            // Instead of checking for exact message, just check that it contains the key parts
-            String errorMsg = e.getMessage().trim();
-            assertTrue(errorMsg.contains("theSameNameFieldDifferentDataType"));
-            assertTrue(errorMsg.contains("different types"));
+            assertEquals(msg.toString().trim(), e.getMessage().trim());
         }
     }
 
