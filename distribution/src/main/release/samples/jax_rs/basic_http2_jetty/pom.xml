@@ -23,9 +23,9 @@
     <name>JAX-RS Basic Demo With HTTP/2 communications</name>
     <description>JAX-RS Basic Demo With HTTP/2 communications</description>
     <parent>
-        <groupId>org.apache.cxf.samples</groupId>
+        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../..</relativePath>
     </parent>
     <profiles>
@@ -104,12 +104,12 @@
     </profiles>
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http-jetty</artifactId>
             <version>${project.version}</version>
         </dependency>

@@ -25,14 +25,14 @@
     <description>Apache CXF Servlet Compatibility Bundle Jar</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-bundle-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
     </parent>
     
     <properties>
         <cxf.osgi.symbolic.name>${project.groupId}.bundle.servlet</cxf.osgi.symbolic.name>
-        <cxf.module.name>org.apache.cxf.bundle.servlet</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.bundle.servlet</cxf.module.name>
     </properties>
 
     <build>

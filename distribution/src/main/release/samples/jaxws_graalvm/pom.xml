@@ -23,9 +23,9 @@
     <name>JAX-WS GraalVM Demo</name>
     <description>JAX-WS GraalVM Demo</description>
     <parent>
-        <groupId>org.apache.cxf.samples</groupId>
+        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
     </parent>
     <properties>
         <cxf.version>${project.version}</cxf.version>
@@ -34,7 +34,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.cxf</groupId>
+                <groupId>io.openliberty.org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>${project.version}</version>
                 <executions>
@@ -61,7 +61,7 @@
             <id>server</id>
             <dependencies>
                 <dependency>
-                    <groupId>org.apache.cxf</groupId>
+                    <groupId>io.openliberty.org.apache.cxf</groupId>
                     <artifactId>cxf-rt-transports-http-netty-server</artifactId>
                 </dependency>
             </dependencies>
@@ -115,7 +115,7 @@
             <id>client</id>
             <dependencies>
                 <dependency>
-                    <groupId>org.apache.cxf</groupId>
+                    <groupId>io.openliberty.org.apache.cxf</groupId>
                     <artifactId>cxf-rt-transports-http-netty-client</artifactId>
                 </dependency>
             </dependencies>
@@ -169,11 +169,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
         </dependency>
     </dependencies>

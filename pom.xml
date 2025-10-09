@@ -19,9 +19,9 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.cxf</groupId>
+    <groupId>io.openliberty.org.apache.cxf</groupId>
     <artifactId>cxf</artifactId>
-    <version>3.5.12-SNAPSHOT</version>
+    <version>3.5.5.1</version>
     <name>Apache CXF</name>
     <description>Apache CXF is an open-source services framework that aids in 
     the development of services using front-end programming APIs, like JAX-WS 
@@ -489,7 +489,7 @@
                         <detectOfflineLinks>false</detectOfflineLinks>
                         <notimestamp>true</notimestamp>
                         <doclint>none</doclint>
-                        <!--subpackages>org.apache.cxf</subpackages-->
+                        <!--subpackages>io.openliberty.org.apache.cxf</subpackages-->
                     </configuration>
                 </plugin>
                 <plugin>

@@ -19,15 +19,15 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.cxf.samples.wsdiscovery</groupId>
+    <groupId>io.openliberty.org.apache.cxf.samples.wsdiscovery</groupId>
     <artifactId>cxf-samples-wsdiscovery</artifactId>
     <packaging>jar</packaging>
     <name>WS-Discovery Sample</name>
     <description>WS-Discovery Sample</description>
     <parent>
-        <groupId>org.apache.cxf.samples</groupId>
+        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
     </parent>
     <properties>
         <cxf.version>${project.version}</cxf.version>
@@ -35,31 +35,31 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf.services.ws-discovery</groupId>
+            <groupId>io.openliberty.org.apache.cxf.services.ws-discovery</groupId>
             <artifactId>cxf-services-ws-discovery-api</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf.services.ws-discovery</groupId>
+            <groupId>io.openliberty.org.apache.cxf.services.ws-discovery</groupId>
             <artifactId>cxf-services-ws-discovery-service</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
     </dependencies>
     <build>
         <defaultGoal>install</defaultGoal>
         <plugins>
             <plugin>
-                <groupId>org.apache.cxf</groupId>
+                <groupId>io.openliberty.org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>${project.version}</version>
                 <executions>
@@ -86,7 +86,7 @@
             <id>service</id>
             <dependencies>
                 <dependency>
-                    <groupId>org.apache.cxf</groupId>
+                    <groupId>io.openliberty.org.apache.cxf</groupId>
                     <artifactId>cxf-rt-transports-http-jetty</artifactId>
                     <version>${project.version}</version>
                 </dependency>
@@ -103,7 +103,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>org.apache.cxf.samples.discovery.Main</mainClass>
+                                    <mainClass>io.openliberty.org.apache.cxf.samples.discovery.Main</mainClass>
                                 </configuration>
                             </execution>
                         </executions>
@@ -125,7 +125,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>org.apache.cxf.samples.discovery.Client</mainClass>
+                                    <mainClass>io.openliberty.org.apache.cxf.samples.discovery.Client</mainClass>
                                 </configuration>
                             </execution>
                         </executions>

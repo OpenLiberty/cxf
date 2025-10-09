@@ -24,7 +24,7 @@
     <servlet>
         <display-name>CXF Service Servlet</display-name>
         <servlet-name>CXFServiceServlet</servlet-name>
-        <servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
+        <servlet-class>io.openliberty.org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
         <init-param>
             <param-name>jaxrs.serviceClasses</param-name>
@@ -32,7 +32,7 @@
         </init-param>
         <init-param>
             <param-name>jaxrs.features</param-name>
-            <param-value>org.apache.cxf.jaxrs.openapi.OpenApiFeature</param-value>
+            <param-value>io.openliberty.org.apache.cxf.jaxrs.openapi.OpenApiFeature</param-value>
         </init-param>
         <init-param>
             <param-name>jaxrs.providers</param-name>

@@ -25,13 +25,13 @@
     <description>Apache CXF Core</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.core</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.core</cxf.module.name>
         <cxf.bundle.activator>org.apache.cxf.bus.osgi.CXFActivator</cxf.bundle.activator>
         <cxf.osgi.export>
             !org.apache.cxf.internal,

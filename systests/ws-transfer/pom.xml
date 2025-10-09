@@ -27,13 +27,13 @@
     
     <parent>
         <artifactId>cxf-parent</artifactId>
-        <groupId>org.apache.cxf</groupId>
-        <version>3.5.12-SNAPSHOT</version>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <version>3.5.5.1</version>
         <relativePath>../../parent/pom.xml</relativePath>
     </parent>
     
     <properties>
-        <cxf.module.name>org.apache.cxf.systests.ws.transfer</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.systests.ws.transfer</cxf.module.name>
     </properties>
     
     <dependencies>
@@ -61,7 +61,7 @@
           <scope>test</scope>
         </dependency>
         <dependency>
-          <groupId>org.apache.cxf</groupId>
+          <groupId>io.openliberty.org.apache.cxf</groupId>
           <artifactId>cxf-testutils</artifactId>
           <version>${project.version}</version>
           <scope>test</scope>

@@ -25,12 +25,12 @@
     <description>Apache CXF WADL2Java Code Generation Maven2 Plugin</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-maven-plugins</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.plugin.wadl2java</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.plugin.wadl2java</cxf.module.name>
     </properties>
     <dependencies>
         <dependency>
@@ -74,12 +74,12 @@
             <version>${cxf.plexus-archiver.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-wadlto-jaxrs</artifactId>
             <version>${project.version}</version>
         </dependency>

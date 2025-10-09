@@ -30,7 +30,7 @@
     <servlet>
         <servlet-name>CXFServlet</servlet-name>
         <display-name>CXF Servlet</display-name>
-        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <servlet-class>io.openliberty.org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
         <async-supported>true</async-supported>
     </servlet>

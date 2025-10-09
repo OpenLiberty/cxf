@@ -4,7 +4,7 @@
     <handler-chain>
         <handler>
             <handler-name>Dummy</handler-name>
-            <handler-class>org.apache.cxf.systest.ws.policy.handler.DummyHandler</handler-class>
+            <handler-class>io.openliberty.org.apache.cxf.systest.ws.policy.handler.DummyHandler</handler-class>
         </handler>
     </handler-chain>
 </handler-chains>

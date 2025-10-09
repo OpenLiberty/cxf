@@ -24,9 +24,9 @@
     <name>Bank sample using JAX-WS API's to talk via CORBA/IIOP</name>
     <description>Bank sample using JAX-WS API's to talk via CORBA/IIOP</description>
     <parent>
-        <groupId>org.apache.cxf.samples</groupId>
+        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../..</relativePath>
     </parent>
     <properties>
@@ -67,7 +67,7 @@
         </pluginManagement>
         <plugins>
             <plugin>
-                <groupId>org.apache.cxf</groupId>
+                <groupId>io.openliberty.org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>${project.version}</version>
                 <executions>
@@ -221,15 +221,15 @@
     </profiles>
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-bindings-corba</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-common</artifactId>
         </dependency>
          <dependency>

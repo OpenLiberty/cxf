@@ -25,17 +25,17 @@
     <description>Apache CXF JAX-RS Extensions: Reactive Streams</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../../../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.rs.reactivestreams</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.rs.reactivestreams</cxf.module.name>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>${project.version}</version>
         </dependency>

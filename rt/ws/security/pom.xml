@@ -25,13 +25,13 @@
     <description>Apache CXF Runtime WS Security</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.ws.security</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.ws.security</cxf.module.name>
         <cxf.osgi.import>
             javax.xml.soap;version="${cxf.osgi.saaj.version}",
             javax.jws*;version="${cxf.osgi.jws.version}",
@@ -45,41 +45,46 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-bindings-soap</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-security-saml</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-addr</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-policy</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>com.ibm.websphere.appserver.spi</groupId>
+            <artifactId>com.ibm.websphere.appserver.spi.logging</artifactId>
+            <version>1.1.106</version>
+        </dependency>
+        <dependency>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-mex</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
@@ -97,7 +102,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.wss4j</groupId>
+            <groupId>io.openliberty.org.apache.wss4j</groupId>
             <artifactId>wss4j-ws-security-dom</artifactId>
             <exclusions>
                  <exclusion>
@@ -107,7 +112,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.apache.wss4j</groupId>
+            <groupId>io.openliberty.org.apache.wss4j</groupId>
             <artifactId>wss4j-policy</artifactId>
             <exclusions>
                  <exclusion>
@@ -117,11 +122,11 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.apache.wss4j</groupId>
+            <groupId>io.openliberty.org.apache.wss4j</groupId>
             <artifactId>wss4j-ws-security-stax</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.wss4j</groupId>
+            <groupId>io.openliberty.org.apache.wss4j</groupId>
             <artifactId>wss4j-ws-security-policy-stax</artifactId>
         </dependency>
         <dependency>
@@ -145,25 +150,25 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>${project.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-local</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-testutils</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-features-logging</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>

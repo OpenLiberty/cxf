@@ -3,7 +3,7 @@
     <handler-chain>
         <handler>
             <handler-name>ContextHandler</handler-name>
-            <handler-class>org.apache.cxf.systest.cxf6319.EmptyHandler</handler-class>
+            <handler-class>io.openliberty.org.apache.cxf.systest.cxf6319.EmptyHandler</handler-class>
         </handler>
     </handler-chain>
 </handler-chains>

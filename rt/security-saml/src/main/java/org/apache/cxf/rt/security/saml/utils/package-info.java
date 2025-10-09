@@ -17,13 +17,9 @@
  * under the License.
  */
 
-package org.apache.cxf.ws.security.tokenstore;
+/**
+ * SAML utility classes.
+ */
+package org.apache.cxf.rt.security.saml.utils;
 
-// Liberty Change
-public class TokenStoreException extends Exception {
-
-    public TokenStoreException(Throwable cause) {
-        super(cause);
-    }
-
-}
+// Made with Bob

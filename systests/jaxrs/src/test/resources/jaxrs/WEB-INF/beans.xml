@@ -165,7 +165,7 @@
         <entry key="application/xml" value="classpath:/org/apache/cxf/systest/jaxrs/resources/template2.xsl"/>
     </util:map>
     <util:list id="outClassNames">
-        <value>org.apache.cxf.systest.jaxrs.Book</value>
+        <value>io.openliberty.org.apache.cxf.systest.jaxrs.Book</value>
     </util:list>
     <bean id="xsltProvider" class="org.apache.cxf.jaxrs.provider.XSLTJaxbProvider">
         <property name="resolver" ref="uriResolver"/>
@@ -253,13 +253,13 @@
         <property name="schemaHandler" ref="schemaHolder"/>
     </bean>
     <util:list id="jaxbClasses">
-        <value>org.apache.cxf.systest.jaxrs.Book</value>
+        <value>io.openliberty.org.apache.cxf.systest.jaxrs.Book</value>
     </util:list>
     <bean id="jaxbProviderXsi" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider">
         <property name="jaxbElementClassNames" ref="jaxbClasses"/>
         <property name="extraClass">
             <list>
-                <value>org.apache.cxf.systest.jaxrs.SuperBook</value>
+                <value>io.openliberty.org.apache.cxf.systest.jaxrs.SuperBook</value>
             </list>
         </property>
     </bean>

@@ -24,9 +24,9 @@ under the License.
     <name>Apache CXF JAX-WS Failover Blueprint Demo</name>
     <description>Failover Basic Demo</description>
     <parent>
-        <groupId>org.apache.cxf.samples</groupId>
+        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../..</relativePath>
     </parent>
 
@@ -57,21 +57,21 @@ under the License.
 
     <dependencies>
     	<dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-client</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf.samples</groupId>
+            <groupId>io.openliberty.org.apache.cxf.samples</groupId>
             <artifactId>failover_server</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-features-clustering</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

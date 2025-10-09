@@ -19,10 +19,10 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.cxf.samples</groupId>
+    <groupId>io.openliberty.org.apache.cxf.samples</groupId>
     <artifactId>cxf-samples</artifactId>
     <packaging>pom</packaging>
-    <version>3.5.12-SNAPSHOT</version>
+    <version>3.5.5.1</version>
     <name>Apache CXF Samples</name>
     <description>Apache CXF Samples</description>
     <url>https://cxf.apache.org</url>
@@ -54,7 +54,7 @@
             <artifactId>jcl-over-slf4j</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-features-logging</artifactId>
         </dependency>
     </dependencies>
@@ -167,14 +167,14 @@
             to make sure the same versions are used for the samples
             -->
             <dependency>
-                <groupId>org.apache.cxf</groupId>
+                <groupId>io.openliberty.org.apache.cxf</groupId>
                 <artifactId>cxf-parent</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.apache.cxf</groupId>
+                <groupId>io.openliberty.org.apache.cxf</groupId>
                 <artifactId>cxf</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>

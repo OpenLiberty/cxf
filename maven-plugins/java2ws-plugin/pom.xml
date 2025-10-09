@@ -25,12 +25,12 @@
     <description>Apache CXF Java2WS Maven2 Plugin</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-maven-plugins</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.plugin.java2ws</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.plugin.java2ws</cxf.module.name>
     </properties>
     <dependencies>
         <dependency>
@@ -59,23 +59,23 @@
             <version>${cxf.plexus-utils.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!--dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-wsdlto-databinding-jaxb</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-wsdlto-frontend-jaxws</artifactId>
             <version>${project.version}</version>
         </dependency-->
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-java2ws</artifactId>
             <version>${project.version}</version>
         </dependency>

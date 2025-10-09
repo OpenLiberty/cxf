@@ -33,7 +33,7 @@
     <filter>
         <filter-name>CXFFilter</filter-name>
         <display-name>CXFFilter</display-name>
-        <filter-class>org.apache.cxf.transport.servlet.CXFServlet</filter-class>
+        <filter-class>io.openliberty.org.apache.cxf.transport.servlet.CXFServlet</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>CXFFilter</filter-name>
@@ -42,7 +42,7 @@
     <servlet>
         <servlet-name>Default</servlet-name>
         <display-name>Default</display-name>
-        <servlet-class>org.apache.cxf.systest.servlet.TestServlet</servlet-class>
+        <servlet-class>io.openliberty.org.apache.cxf.systest.servlet.TestServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Default</servlet-name>

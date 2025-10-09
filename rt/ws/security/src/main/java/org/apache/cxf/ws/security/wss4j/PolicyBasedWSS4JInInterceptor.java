@@ -25,7 +25,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPException;
@@ -434,7 +436,14 @@ public class PolicyBasedWSS4JInInterceptor extends WSS4JInInterceptor {
      * algorithms that are allowed for encryption, signature, etc.
      */
     protected void setAlgorithmSuites(SoapMessage message, RequestData data) throws WSSecurityException {
-        AlgorithmSuiteTranslater translater = new AlgorithmSuiteTranslater();
+        // Liberty Change Start: Backport Custom Suite support from CXF 4.x
+    	//filter custom alg suite properties:
+        Map<String, Object> customAlgSuite = message.getContextualPropertyKeys()
+                .stream()
+                .filter(k -> k.startsWith(SecurityConstants.CUSTOM_ALG_SUITE_PREFIX))
+                .collect(Collectors.toMap(Function.identity(), k -> message.getContextualProperty(k)));
+        AlgorithmSuiteTranslater translater = new AlgorithmSuiteTranslater(customAlgSuite);
+        // Liberty Change End
         translater.translateAlgorithmSuites(message.get(AssertionInfoMap.class), data);
 
         // Allow for setting non-standard signature algorithms
@@ -585,7 +594,13 @@ public class PolicyBasedWSS4JInInterceptor extends WSS4JInInterceptor {
             }
         }
 
-        List<WSSecurityEngineResult> encryptResults = results.getActionResults().get(WSConstants.ENCR);
+        // Liberty Change Start
+        List<WSSecurityEngineResult> encryptResults = new ArrayList<>();
+        if (results.getActionResults().containsKey(WSConstants.ENCR)) {
+            encryptResults.addAll(results.getActionResults().get(WSConstants.ENCR));
+        }
+        //encryptResults = results.getActionResults().get(WSConstants.ENCR);
+        // Liberty Change End  
         Collection<WSDataRef> encrypted = new HashSet<>();
         if (encryptResults != null) {
             for (WSSecurityEngineResult result : encryptResults) {

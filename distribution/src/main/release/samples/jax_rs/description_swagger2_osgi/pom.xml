@@ -24,9 +24,9 @@ under the License.
     <name>CXF JAX-RS Swagger2 Blueprint Demo</name>
     <description>JAX-RS Swagger2 Basic Demo for OSGi using Blueprint</description>
     <parent>
-        <groupId>org.apache.cxf.samples</groupId>
+        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../..</relativePath>
     </parent>
 
@@ -69,19 +69,19 @@ under the License.
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-service-description-swagger</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
             <groupId>jakarta.ws.rs</groupId>

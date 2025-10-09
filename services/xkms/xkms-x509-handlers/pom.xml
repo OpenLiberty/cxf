@@ -19,31 +19,31 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.cxf.services.xkms</groupId>
+    <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
     <artifactId>cxf-services-xkms-x509-handlers</artifactId>
     <packaging>bundle</packaging>
     <name>Apache CXF XKMS X509 Handlers</name>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.xkms.x509.handlers</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.xkms.x509.handlers</cxf.module.name>
         <cxf.osgi.import>
             javax.xml.bind*;version="${cxf.osgi.javax.bind.version}"
         </cxf.osgi.import>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf.services.xkms</groupId>
+            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-common</artifactId>
             <version>${project.version}</version>
         </dependency>

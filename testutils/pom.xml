@@ -25,13 +25,13 @@
     <description>Apache CXF Test Utilities</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.testutils</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.testutils</cxf.module.name>
         <cxf.osgi.import>
             javax.xml.soap;version="${cxf.osgi.saaj.version}",
             javax.jws*;version="${cxf.osgi.jws.version}",
@@ -48,12 +48,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-wsdl</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -153,7 +153,7 @@
                 </executions>
             </plugin>
             <!--plugin>
-                <groupId>org.apache.cxf</groupId>
+                <groupId>io.openliberty.org.apache.cxf</groupId>
                 <artifactId>cxf-wsdl-validator-plugin</artifactId>
                 <version>${project.version}</version>
                 <executions>
@@ -166,7 +166,7 @@
                 </executions>
             </plugin-->
             <plugin>
-                <groupId>org.apache.cxf</groupId>
+                <groupId>io.openliberty.org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>${project.version}</version>
                 <dependencies>

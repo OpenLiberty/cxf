@@ -23,9 +23,9 @@
     <name>JAX-RS WebSocket Demo</name>
     <description>JAX-RS WebSocket Demo</description>
     <parent>
-        <groupId>org.apache.cxf.samples</groupId>
+        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../..</relativePath>
     </parent>
     <properties>
@@ -123,9 +123,9 @@
     </profiles>
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <!-- This dependency is needed if you're using the Jetty container -->
         <dependency>
@@ -165,19 +165,19 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-websocket</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
             <groupId>jakarta.ws.rs</groupId>

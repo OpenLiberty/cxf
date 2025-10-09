@@ -25,13 +25,13 @@
     <description>Apache CXF JAX-RS Service Description</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.rs.wadl</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.rs.wadl</cxf.module.name>
         <cxf.osgi.import>
             javax.servlet*;version="${cxf.osgi.javax.servlet.version}",
             javax.xml.bind*;version="${cxf.osgi.javax.bind.version}"
@@ -45,25 +45,25 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-databinding-aegis</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
             <optional>true</optional>
             <exclusions>
                 <exclusion>
-                    <groupId>org.apache.cxf</groupId>
+                    <groupId>io.openliberty.org.apache.cxf</groupId>
                     <artifactId>cxf-rt-frontend-simple</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-extension-providers</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>

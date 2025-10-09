@@ -886,8 +886,7 @@ public class IssueSamlUnitTest {
         data.setWsDocInfo(new WSDocInfo(assertion.getOwnerDocument()));
 
         assertionWrapper.parseSubject(
-            new WSSSAMLKeyInfoProcessor(data), data.getSigVerCrypto(), data.getCallbackHandler()
-        );
+            new WSSSAMLKeyInfoProcessor(data), data.getSigVerCrypto());
 
         SAMLKeyInfo samlKeyInfo = assertionWrapper.getSubjectKeyInfo();
         assertArrayEquals(secret, samlKeyInfo.getSecret());

@@ -61,7 +61,7 @@
         <property name="singleJaxbContext" value="true"/>
         <property name="extraClass">
             <list>
-                <value>org.apache.cxf.jaxrs.resources.SuperBook</value>
+                <value>io.openliberty.org.apache.cxf.jaxrs.resources.SuperBook</value>
             </list>
         </property>
     </bean>

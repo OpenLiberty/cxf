@@ -20,18 +20,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <artifactId>cxf-parent</artifactId>
-        <groupId>org.apache.cxf</groupId>
-        <version>3.5.12-SNAPSHOT</version>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
+        <version>3.5.5.1</version>
         <relativePath>../../parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.cxf.systests</groupId>
+    <groupId>io.openliberty.org.apache.cxf.systests</groupId>
     <artifactId>cxf-systests-ws-security</artifactId>
     <name>Apache CXF WS-Security System Tests</name>
     <description>Apache CXF WS-Security System Tests</description>
     <url>https://cxf.apache.org</url>
     <properties>
-        <cxf.module.name>org.apache.cxf.systests.ws.security</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.systests.ws.security</cxf.module.name>
     </properties>
     <build>
         <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
@@ -51,7 +51,7 @@
         </testResources>
         <plugins>
             <plugin>
-                <groupId>org.apache.cxf</groupId>
+                <groupId>io.openliberty.org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>${project.version}</version>
                 <dependencies>
@@ -127,74 +127,74 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-security</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-databinding-jaxb</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-client</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-bindings-soap</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http-jetty</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-addr</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-policy</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-security</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-testutils</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-features-logging</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-testutils</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
@@ -230,17 +230,17 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf.services.xkms</groupId>
+            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-client</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf.services.xkms</groupId>
+            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-service</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf.services.xkms</groupId>
+            <groupId>io.openliberty.org.apache.cxf.services.xkms</groupId>
             <artifactId>cxf-services-xkms-x509-handlers</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -250,7 +250,7 @@
             <id>async</id>
             <dependencies>
                 <dependency>
-                    <groupId>org.apache.cxf</groupId>
+                    <groupId>io.openliberty.org.apache.cxf</groupId>
                     <artifactId>cxf-rt-transports-http-hc</artifactId>
                     <version>${project.version}</version>
                 </dependency>

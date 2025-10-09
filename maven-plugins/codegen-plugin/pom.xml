@@ -25,12 +25,12 @@
     <description>Apache CXF Code Generation Maven2 Plugins</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-maven-plugins</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.plugin.codegen</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.plugin.codegen</cxf.module.name>
     </properties>
     <dependencies>
         <dependency>
@@ -69,37 +69,37 @@
             <version>${cxf.plexus-archiver.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-wsdlto-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-wsdlto-databinding-jaxb</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-wsdlto-frontend-jaxws</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-wsdlto-frontend-javascript</artifactId>
             <version>${project.version}</version>
             <exclusions>
                 <exclusion>
-                    <groupId>org.apache.cxf</groupId>
+                    <groupId>io.openliberty.org.apache.cxf</groupId>
                     <artifactId>cxf-rt-frontend-simple</artifactId>
                 </exclusion>
             </exclusions>
@@ -141,12 +141,6 @@
                         <id>mojo-descriptor</id>
                         <goals>
                             <goal>descriptor</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>generate-helpmojo</id>
-                        <goals>
-                            <goal>helpmojo</goal>
                         </goals>
                     </execution>
                 </executions>

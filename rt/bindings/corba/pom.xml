@@ -25,13 +25,13 @@
     <description>Apache CXF Runtime CORBA Binding</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.binding.corba</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.binding.corba</cxf.module.name>
         <cxf.checkstyle.extension>-corba</cxf.checkstyle.extension>
         <cxf.osgi.import>
             org.objectweb.asm*;version="${cxf.osgi.asm.version}",
@@ -52,12 +52,12 @@
             <artifactId>${cxf.asm.artifactId}</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-databinding-jaxb</artifactId>
             <version>${project.version}</version>
         </dependency>

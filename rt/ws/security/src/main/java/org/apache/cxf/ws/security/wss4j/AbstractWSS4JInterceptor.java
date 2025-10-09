@@ -24,11 +24,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level; // Liberty Change
+import java.util.logging.Logger; // Liberty Change
 
 import javax.xml.namespace.QName;
 
 import org.apache.cxf.binding.soap.SoapMessage;
 import org.apache.cxf.binding.soap.interceptor.SoapInterceptor;
+import org.apache.cxf.common.logging.LogUtils; // Liberty Change
 import org.apache.cxf.interceptor.Fault;
 import org.apache.cxf.message.Message;
 import org.apache.cxf.message.MessageUtils;
@@ -42,6 +45,8 @@ import org.apache.wss4j.common.crypto.PasswordEncryptor;
 import org.apache.wss4j.common.ext.WSSecurityException;
 import org.apache.wss4j.dom.handler.RequestData;
 import org.apache.wss4j.dom.handler.WSHandler;
+
+import com.ibm.websphere.ras.annotation.Trivial; // Liberty Change
 
 public abstract class AbstractWSS4JInterceptor extends WSHandler implements SoapInterceptor,
     PhaseInterceptor<SoapMessage> {
@@ -59,6 +64,7 @@ public abstract class AbstractWSS4JInterceptor extends WSHandler implements Soap
     private final Set<String> after = new HashSet<>();
     private String phase;
     private String id;
+    private static final Logger LOG = LogUtils.getL7dLogger(AbstractWSS4JInterceptor.class); // Liberty Change
 
     public AbstractWSS4JInterceptor() {
         super();
@@ -86,6 +92,7 @@ public abstract class AbstractWSS4JInterceptor extends WSHandler implements Soap
         this.phase = phase;
     }
 
+    @Trivial // Liberty Change
     public Object getOption(String key) {
         return properties.get(key);
     }
@@ -207,6 +214,17 @@ public abstract class AbstractWSS4JInterceptor extends WSHandler implements Soap
         if (passwordEncryptor != null) {
             msg.put(ConfigurationConstants.PASSWORD_ENCRYPTOR_INSTANCE, passwordEncryptor);
         }
+
+        // Liberty Change Start
+        String mustunderstand = (String)msg.getContextualProperty("ws-security.must-understand");
+        if (mustunderstand != null && !mustunderstand.isEmpty()) {
+            msg.put(ConfigurationConstants.MUST_UNDERSTAND, mustunderstand);
+            boolean doDebug = LOG.isLoggable(Level.FINE);
+            if (doDebug) {
+                LOG.fine("AbstractWSS4JInterceptor: OLGH23255 - mustUnderstand is set = " + mustunderstand);
+            }        
+        }
+		// Liberty Change End
     }
 
     @Override
@@ -215,7 +233,7 @@ public abstract class AbstractWSS4JInterceptor extends WSHandler implements Soap
         RequestData reqData
     ) throws WSSecurityException {
         Message message = (Message)reqData.getMsgContext();
-        ClassLoader classLoader = this.getClassLoader(reqData.getMsgContext());
+        ClassLoader classLoader = this.getClassLoader();
         PasswordEncryptor passwordEncryptor = getPasswordEncryptor(reqData);
         return
             WSS4JUtils.loadCryptoFromPropertiesFile(

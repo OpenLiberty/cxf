@@ -19,21 +19,21 @@
     -->
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.apache.cxf.karaf</groupId>
+        <groupId>io.openliberty.org.apache.cxf.karaf</groupId>
         <artifactId>karaf-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
     </parent>
     <artifactId>cxf-karaf-commands</artifactId>
     <packaging>bundle</packaging>
     <name>Apache CXF Karaf Commands</name>
     <description>Apache CXF Karaf Commands</description>
     <properties>
-        <cxf.module.name>org.apache.cxf.karaf.commands</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.karaf.commands</cxf.module.name>
     </properties>
     <dependencies>
         <!-- cxf -->
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${project.version}</version>
         </dependency>

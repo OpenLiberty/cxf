@@ -50,7 +50,7 @@
             <outputDirectory/>
             <scope>provided</scope>
             <excludes>
-                <exclude>org.apache.cxf.samples:jax_rs_minimal_osgi</exclude>
+                <exclude>io.openliberty.org.apache.cxf.samples:jax_rs_minimal_osgi</exclude>
             </excludes>
             <useTransitiveDependencies>false</useTransitiveDependencies>
         </dependencySet>

@@ -25,14 +25,14 @@
   <description>Apache CXF Runtime OpenId Connect</description>
   <url>https://cxf.apache.org</url>
   <parent>
-    <groupId>org.apache.cxf</groupId>
+    <groupId>io.openliberty.org.apache.cxf</groupId>
     <artifactId>cxf-parent</artifactId>
-    <version>3.5.12-SNAPSHOT</version>
+    <version>3.5.5.1</version>
     <relativePath>../../../../../parent/pom.xml</relativePath>
   </parent>
   <properties>
     <compilerArguments>-Aopenjpa.source=7 -Aopenjpa.metamodel=true</compilerArguments>
-    <cxf.module.name>org.apache.cxf.rs.security.sso.oidc</cxf.module.name>
+    <cxf.module.name>io.openliberty.org.apache.cxf.rs.security.sso.oidc</cxf.module.name>
     <cxf.osgi.import>
         javax.annotation*;version="${cxf.osgi.javax.annotation.version}",
         *
@@ -40,12 +40,12 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
+      <groupId>io.openliberty.org.apache.cxf</groupId>
       <artifactId>cxf-rt-rs-security-oauth2</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.cxf</groupId>
+      <groupId>io.openliberty.org.apache.cxf</groupId>
       <artifactId>cxf-rt-rs-security-jose-jaxrs</artifactId>
       <version>${project.version}</version>
     </dependency>

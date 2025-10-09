@@ -23,9 +23,9 @@
     <name>WS-Notification Demo</name>
     <description>WS-Notification Demo</description>
     <parent>
-        <groupId>org.apache.cxf.samples</groupId>
+        <groupId>io.openliberty.org.apache.cxf.samples</groupId>
         <artifactId>cxf-samples</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
     </parent>
     <properties>
         <cxf.version>${project.version}</cxf.version>
@@ -46,7 +46,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>org.apache.cxf.wsn.services.Service</mainClass>
+                                    <mainClass>io.openliberty.org.apache.cxf.wsn.services.Service</mainClass>
                                 </configuration>
                             </execution>
                         </executions>
@@ -80,34 +80,34 @@
     </profiles>
     <dependencies>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-addr</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-policy</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf.services.wsn</groupId>
+            <groupId>io.openliberty.org.apache.cxf.services.wsn</groupId>
             <artifactId>cxf-services-wsn-core</artifactId>
-            <version>3.5.12-SNAPSHOT</version>
+            <version>3.5.5.1</version>
         </dependency>
     </dependencies>
 </project>

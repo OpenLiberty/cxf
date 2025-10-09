@@ -25,13 +25,13 @@
     <description>Apache CXF Runtime HTTP Transport</description>
     <url>https://cxf.apache.org</url>
     <parent>
-        <groupId>org.apache.cxf</groupId>
+        <groupId>io.openliberty.org.apache.cxf</groupId>
         <artifactId>cxf-parent</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../../../parent/pom.xml</relativePath>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.transport.http</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.transport.http</cxf.module.name>
         <cxf.bundle.activator>org.apache.cxf.transport.http.osgi.HTTPTransportActivator</cxf.bundle.activator>
         <cxf.osgi.import>
             javax.net,
@@ -86,19 +86,19 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-wsdl</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-policy</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>

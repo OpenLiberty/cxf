@@ -19,21 +19,21 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.cxf</groupId>
+    <groupId>io.openliberty.org.apache.cxf</groupId>
     <artifactId>cxf-java2swagger-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>3.5.12-SNAPSHOT</version>
+    <version>3.5.5.1</version>
     <name>Apache CXF Java2Swagger Maven2 Plugin</name>
     <description>Apache CXF Java2Swagger Maven2 Plugin</description>
     <url>https://cxf.apache.org</url>
 
     <parent>
-      <groupId>org.apache.cxf</groupId>
+      <groupId>io.openliberty.org.apache.cxf</groupId>
       <artifactId>cxf-maven-plugins</artifactId>
-      <version>3.5.12-SNAPSHOT</version>
+      <version>3.5.5.1</version>
     </parent>
     <properties>
-        <cxf.module.name>org.apache.cxf.plugin.java2swagger</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.plugin.java2swagger</cxf.module.name>
         <cxf.manifest.location />
     </properties>
 
@@ -86,12 +86,12 @@
             <version>${cxf.plexus-utils.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-tools-wadlto-jaxrs</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -136,7 +136,7 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.cxf</groupId>
+            <groupId>io.openliberty.org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-service-description-swagger</artifactId>
             <version>${project.version}</version>
         </dependency>

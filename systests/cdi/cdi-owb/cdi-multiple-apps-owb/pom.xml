@@ -19,9 +19,9 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <groupId>org.apache.cxf.systests</groupId>
+        <groupId>io.openliberty.org.apache.cxf.systests</groupId>
         <artifactId>cxf-systests-cdi-owb</artifactId>
-        <version>3.5.12-SNAPSHOT</version>
+        <version>3.5.5.1</version>
         <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -31,6 +31,6 @@
     <url>https://cxf.apache.org</url>
     
     <properties>
-        <cxf.module.name>org.apache.cxf.systests.cdi.owb.multiapp</cxf.module.name>
+        <cxf.module.name>io.openliberty.org.apache.cxf.systests.cdi.owb.multiapp</cxf.module.name>
     </properties>
 </project>
