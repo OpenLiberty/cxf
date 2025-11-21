@@ -76,6 +76,17 @@
                 <enabled>false</enabled>
             </releases>
         </repository>
+        <repository>
+            <id>ibm.olrepo</id>
+            <url>https://public.dhe.ibm.com/ibmdl/export/pub/software/olrepo/</url>
+            <name>IBM Open Liberty Repository</name>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
